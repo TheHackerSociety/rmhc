@@ -1,12 +1,21 @@
 import React from 'react';
+import ParamStore from 'param-store';
 
 export default class HomePage extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log();
+  }
+  startSearch() {
+    console.log('click');
+    ParamStore.set({ path: 'search' });
+  }
+
   render() {
     return (
       <div>
-        Hello
+        <p onClick={this.startSearch}>Start</p>
       </div>
       );
   }
 }
-;
