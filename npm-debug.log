@@ -1,0 +1,414 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/Users/noaiolin/.meteor/packages/meteor-tool/.1.3.1.k0nbmw++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'react-geosuggest',
+1 verbose cli   '--save' ]
+2 info using npm@2.14.22
+3 info using node@v0.10.43
+4 verbose install initial load of /Users/noaiolin/poetic/mcdonalds/package.json
+5 verbose installManyTop reading scoped package data from /Users/noaiolin/poetic/mcdonalds/node_modules/eslint/package.json
+6 verbose installManyTop reading scoped package data from /Users/noaiolin/poetic/mcdonalds/node_modules/eslint-config-airbnb/package.json
+7 verbose installManyTop reading scoped package data from /Users/noaiolin/poetic/mcdonalds/node_modules/eslint-plugin-jsx-a11y/package.json
+8 verbose installManyTop reading scoped package data from /Users/noaiolin/poetic/mcdonalds/node_modules/eslint-plugin-react/package.json
+9 verbose installManyTop reading scoped package data from /Users/noaiolin/poetic/mcdonalds/node_modules/lodash/package.json
+10 verbose installManyTop reading scoped package data from /Users/noaiolin/poetic/mcdonalds/node_modules/meteor-node-stubs/package.json
+11 verbose installManyTop reading scoped package data from /Users/noaiolin/poetic/mcdonalds/node_modules/mocha/package.json
+12 verbose installManyTop reading scoped package data from /Users/noaiolin/poetic/mcdonalds/node_modules/param-store/package.json
+13 verbose installManyTop reading scoped package data from /Users/noaiolin/poetic/mcdonalds/node_modules/react/package.json
+14 verbose installManyTop reading scoped package data from /Users/noaiolin/poetic/mcdonalds/node_modules/react-addons-test-utils/package.json
+15 verbose installManyTop reading scoped package data from /Users/noaiolin/poetic/mcdonalds/node_modules/react-dom/package.json
+16 verbose installManyTop reading scoped package data from /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/package.json
+17 info package.json react-geosuggest@1.20.1 scripts['server'] should probably be scripts['start'].
+18 verbose readDependencies loading dependencies from /Users/noaiolin/poetic/mcdonalds/package.json
+19 verbose install react-geosuggest is installed as 1.20.1
+20 silly cache add args [ 'react-geosuggest', null ]
+21 verbose cache add spec react-geosuggest
+22 silly cache add parsed spec { raw: 'react-geosuggest',
+22 silly cache add   scope: null,
+22 silly cache add   name: 'react-geosuggest',
+22 silly cache add   rawSpec: '',
+22 silly cache add   spec: 'latest',
+22 silly cache add   type: 'tag' }
+23 silly addNamed react-geosuggest@latest
+24 verbose addNamed "latest" is being treated as a dist-tag for react-geosuggest
+25 info addNameTag [ 'react-geosuggest', 'latest' ]
+26 silly mapToRegistry name react-geosuggest
+27 silly mapToRegistry using default registry
+28 silly mapToRegistry registry https://registry.npmjs.org/
+29 silly mapToRegistry uri https://registry.npmjs.org/react-geosuggest
+30 verbose addNameTag registry:https://registry.npmjs.org/react-geosuggest not in flight; fetching
+31 verbose request uri https://registry.npmjs.org/react-geosuggest
+32 verbose request no auth needed
+33 info attempt registry request try #1 at 13:54:54
+34 verbose request id fcb82cf342149601
+35 verbose etag "E9IXKAGPKGPXQD8Y2Q2MA4IJQ"
+36 http request GET https://registry.npmjs.org/react-geosuggest
+37 http 304 https://registry.npmjs.org/react-geosuggest
+38 verbose headers { date: 'Wed, 13 Apr 2016 18:54:54 GMT',
+38 verbose headers   via: '1.1 varnish',
+38 verbose headers   'cache-control': 'max-age=300',
+38 verbose headers   etag: '"E9IXKAGPKGPXQD8Y2Q2MA4IJQ"',
+38 verbose headers   age: '108',
+38 verbose headers   connection: 'keep-alive',
+38 verbose headers   'x-served-by': 'cache-ord1720-ORD',
+38 verbose headers   'x-cache': 'HIT',
+38 verbose headers   'x-cache-hits': '1',
+38 verbose headers   'x-timer': 'S1460573694.966720,VS0,VE0',
+38 verbose headers   vary: 'Accept-Encoding' }
+39 silly get cb [ 304,
+39 silly get   { date: 'Wed, 13 Apr 2016 18:54:54 GMT',
+39 silly get     via: '1.1 varnish',
+39 silly get     'cache-control': 'max-age=300',
+39 silly get     etag: '"E9IXKAGPKGPXQD8Y2Q2MA4IJQ"',
+39 silly get     age: '108',
+39 silly get     connection: 'keep-alive',
+39 silly get     'x-served-by': 'cache-ord1720-ORD',
+39 silly get     'x-cache': 'HIT',
+39 silly get     'x-cache-hits': '1',
+39 silly get     'x-timer': 'S1460573694.966720,VS0,VE0',
+39 silly get     vary: 'Accept-Encoding' } ]
+40 verbose etag https://registry.npmjs.org/react-geosuggest from cache
+41 verbose get saving react-geosuggest to /Users/noaiolin/.npm/registry.npmjs.org/react-geosuggest/.cache.json
+42 verbose correctMkdir /Users/noaiolin/.npm correctMkdir not in flight; initializing
+43 silly addNameTag next cb for react-geosuggest with tag latest
+44 silly addNamed react-geosuggest@1.20.1
+45 verbose addNamed "1.20.1" is a plain semver version for react-geosuggest
+46 silly cache afterAdd react-geosuggest@1.20.1
+47 verbose afterAdd /Users/noaiolin/.npm/react-geosuggest/1.20.1/package/package.json not in flight; writing
+48 verbose correctMkdir /Users/noaiolin/.npm correctMkdir not in flight; initializing
+49 verbose afterAdd /Users/noaiolin/.npm/react-geosuggest/1.20.1/package/package.json written
+50 silly install resolved [ { name: 'react-geosuggest',
+50 silly install resolved     version: '1.20.1',
+50 silly install resolved     description: 'A React autosuggest for the Google Maps Places API.',
+50 silly install resolved     main: 'module/Geosuggest.js',
+50 silly install resolved     author: { name: 'Robert Katzki', email: 'katzki@ubilabs.net' },
+50 silly install resolved     homepage: 'https://github.com/ubilabs/react-geosuggest',
+50 silly install resolved     license: 'MIT',
+50 silly install resolved     repository:
+50 silly install resolved      { type: 'git',
+50 silly install resolved        url: 'git+https://github.com/ubilabs/react-geosuggest.git' },
+50 silly install resolved     bugs: { url: 'https://github.com/ubilabs/react-geosuggest/issues' },
+50 silly install resolved     peerDependencies: { react: '^0.14.0' },
+50 silly install resolved     dependencies: { classnames: '^2.2.3' },
+50 silly install resolved     devDependencies:
+50 silly install resolved      { 'babel-cli': '^6.6.5',
+50 silly install resolved        'babel-core': '^6.7.0',
+50 silly install resolved        'babel-eslint': '^4.1.8',
+50 silly install resolved        'babel-preset-es2015': '^6.6.0',
+50 silly install resolved        'babel-preset-react': '^6.5.0',
+50 silly install resolved        babelify: '^7.2.0',
+50 silly install resolved        browserify: '^13.0.0',
+50 silly install resolved        'browserify-global-shim': '^1.0.0',
+50 silly install resolved        bumpery: '^1.1.1',
+50 silly install resolved        chai: '^3.5.0',
+50 silly install resolved        'conventional-changelog-generator': '0.0.3',
+50 silly install resolved        eslint: '^1.5.1',
+50 silly install resolved        'eslint-plugin-react': '^3.16.1',
+50 silly install resolved        'gh-pages': '^0.9.0',
+50 silly install resolved        jsdom: '^8.1.0',
+50 silly install resolved        'light-server': '^1.0.3',
+50 silly install resolved        mocha: '^2.4.5',
+50 silly install resolved        react: '^0.14.0',
+50 silly install resolved        'react-addons-test-utils': '^0.14.7',
+50 silly install resolved        'react-dom': '^0.14.0',
+50 silly install resolved        sinon: '^1.17.3',
+50 silly install resolved        uglifyjs: '^2.4.10' },
+50 silly install resolved     scripts:
+50 silly install resolved      { prepublish: 'npm run build:module',
+50 silly install resolved        lint: 'eslint ./src/*.jsx ./example/src',
+50 silly install resolved        pretest: 'npm run lint',
+50 silly install resolved        test: 'npm run unit-test',
+50 silly install resolved        start: 'npm run server',
+50 silly install resolved        'unit-test': 'mocha --compilers js:babel-core/register --require ./test/test_helper.js "test/**/*@(.js|.jsx)"',
+50 silly install resolved        server: 'npm run prepare:example && light-server -s example/dist -p 8000 -w \'src/*.jsx,example/src/*.js # npm run js:example\' -w \'src/*.css,example/src/*.css # npm run css # reloadcss\' -w \'example/src/*.html # npm run copy:assets # reload\'',
+50 silly install resolved        'prepare:example': 'rm -rf example/dist && mkdir example/dist && npm run copy:assets && npm run js:example && npm run css',
+50 silly install resolved        'copy:assets': 'cp example/src/*.html example/dist && cp example/src/*.svg example/dist',
+50 silly install resolved        css: 'cat example/src/app.css src/geosuggest.css > example/dist/app.css',
+50 silly install resolved        'js:example': 'browserify example/src/app.js -t babelify --extension=.jsx> example/dist/app.js',
+50 silly install resolved        'js:example:uglify': 'uglifyjs example/dist/app.js -o example/dist/app.js -c warnings=false --mangle',
+50 silly install resolved        'js:browser': 'browserify src/Geosuggest.jsx --standalone Geosuggest --exclude react -t babelify --extension=.jsx -t browserify-global-shim > dist/react-geosuggest.js',
+50 silly install resolved        'js:browser:uglify': 'uglifyjs dist/react-geosuggest.js -o dist/react-geosuggest.min.js -c warnings=false,drop_console=true --mangle',
+50 silly install resolved        'build:module': 'babel src --out-dir module && cp src/geosuggest.css module/',
+50 silly install resolved        'build:browser': 'npm run js:browser && npm run js:browser:uglify',
+50 silly install resolved        'build:example': 'npm run prepare:example && npm run js:example:uglify',
+50 silly install resolved        changelog: 'conventional-changelog-generator && atom -w CHANGELOG.md',
+50 silly install resolved        release: 'echo \'Usage: npm run release:patch|minor|major\'',
+50 silly install resolved        'release:patch': 'npm run build:browser && bumpery --verify=\'npm test\' --no-push --no-commit --no-createTag --versionType patch && npm run release:finish',
+50 silly install resolved        'release:minor': 'npm run build:browser && bumpery --verify=\'npm test\' --no-push --no-commit --no-createTag --versionType minor && npm run release:finish',
+50 silly install resolved        'release:major': 'npm run build:browser && bumpery --verify=\'npm test\' --no-push --no-commit --no-createTag --versionType major && npm run release:finish',
+50 silly install resolved        'release:finish': 'npm run changelog && npm run release:commit && npm run publish:example',
+50 silly install resolved        'release:commit': 'bumpery --commitFiles \'dist/*.js CHANGELOG.md package.json\' --commitMessage \'chore(release): version %VERSION%\' --no-bumpVersion',
+50 silly install resolved        'publish:example': 'npm run build:example && gh-pages -d example/dist' },
+50 silly install resolved     'browserify-global-shim': { react: 'React' },
+50 silly install resolved     keywords: [ 'react', 'react-component', 'google', 'autosuggest', 'places' ],
+50 silly install resolved     gitHead: 'c569f92232568dd30bf3bf677b2d0e105419ee9c',
+50 silly install resolved     _id: 'react-geosuggest@1.20.1',
+50 silly install resolved     _shasum: 'c47af6f58171a6e148266b4912262c540aca1a1d',
+50 silly install resolved     _from: 'react-geosuggest@latest',
+50 silly install resolved     _npmVersion: '3.8.3',
+50 silly install resolved     _nodeVersion: '5.10.0',
+50 silly install resolved     _npmUser: { name: 'roka', email: 'robert@katzki.de' },
+50 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+50 silly install resolved     dist:
+50 silly install resolved      { shasum: 'c47af6f58171a6e148266b4912262c540aca1a1d',
+50 silly install resolved        tarball: 'https://registry.npmjs.org/react-geosuggest/-/react-geosuggest-1.20.1.tgz' },
+50 silly install resolved     _npmOperationalInternal:
+50 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+50 silly install resolved        tmp: 'tmp/react-geosuggest-1.20.1.tgz_1459930800221_0.39566556620411575' },
+50 silly install resolved     directories: {},
+50 silly install resolved     _resolved: 'https://registry.npmjs.org/react-geosuggest/-/react-geosuggest-1.20.1.tgz',
+50 silly install resolved     readme: 'ERROR: No README data found!' } ]
+51 info install react-geosuggest@1.20.1 into /Users/noaiolin/poetic/mcdonalds
+52 info installOne react-geosuggest@1.20.1
+53 verbose installOne of react-geosuggest to /Users/noaiolin/poetic/mcdonalds not in flight; installing
+54 verbose correctMkdir /Users/noaiolin/.npm/_locks correctMkdir not in flight; initializing
+55 verbose lock using /Users/noaiolin/.npm/_locks/react-geosuggest-2f7f4be6b14ff591.lock for /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest
+56 silly install write writing react-geosuggest 1.20.1 to /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest
+57 verbose unbuild node_modules/react-geosuggest
+58 info preuninstall react-geosuggest@1.20.1
+59 info uninstall react-geosuggest@1.20.1
+60 verbose unbuild rmStuff react-geosuggest@1.20.1 from /Users/noaiolin/poetic/mcdonalds/node_modules
+61 info postuninstall react-geosuggest@1.20.1
+62 silly gentlyRm /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest is being purged from base /Users/noaiolin/poetic/mcdonalds
+63 verbose gentlyRm don't care about contents; nuking /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest
+64 silly vacuum-fs purging /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest
+65 silly vacuum-fs quitting because other entries in /Users/noaiolin/poetic/mcdonalds/node_modules
+66 verbose tar unpack /Users/noaiolin/.npm/react-geosuggest/1.20.1/package.tgz
+67 verbose tar unpacking to /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest
+68 silly gentlyRm /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest is being purged
+69 verbose gentlyRm don't care about contents; nuking /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest
+70 silly gunzTarPerm modes [ '755', '644' ]
+71 silly gunzTarPerm extractEntry package.json
+72 silly gunzTarPerm extractEntry .npmignore
+73 silly gunzTarPerm extractEntry README.md
+74 silly gunzTarPerm extractEntry .babelrc
+75 silly gunzTarPerm extractEntry CHANGELOG.md
+76 silly gunzTarPerm extractEntry dist/react-geosuggest.js
+77 silly gunzTarPerm extractEntry dist/react-geosuggest.min.js
+78 silly gunzTarPerm extractEntry module/Geosuggest.js
+79 silly gunzTarPerm extractEntry module/defaults.js
+80 silly gunzTarPerm extractEntry module/filter-input-attributes.js
+81 silly gunzTarPerm extractEntry module/input.js
+82 silly gunzTarPerm extractEntry module/prop-types.js
+83 silly gunzTarPerm extractEntry module/suggest-item.js
+84 silly gunzTarPerm extractEntry module/suggest-list.js
+85 silly gunzTarPerm extractEntry module/geosuggest.css
+86 silly gunzTarPerm extractEntry .eslintrc
+87 silly gunzTarPerm extractEntry test/build.tests.js
+88 silly gunzTarPerm extractEntry test/test_helper.js
+89 silly gunzTarPerm extractEntry test/Geosuggest_spec.jsx
+90 silly gunzTarPerm extractEntry test/fixtures/predictions.js
+91 verbose write writing to /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/package.json
+92 info preinstall react-geosuggest@1.20.1
+93 verbose readDependencies loading dependencies from /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/package.json
+94 silly prepareForInstallMany adding classnames@^2.2.3 from react-geosuggest dependencies
+95 silly prepareForInstallMany adding react@^0.14.0 from react-geosuggest peerDependencies
+96 warn peerDependencies The peer dependency react@^0.14.0 included from react-geosuggest will no
+97 warn peerDependencies longer be automatically installed to fulfill the peerDependency
+98 warn peerDependencies in npm 3+. Your application will need to depend on it explicitly.
+99 verbose readDependencies loading dependencies from /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/package.json
+100 silly cache add args [ 'classnames@^2.2.3', null ]
+101 verbose cache add spec classnames@^2.2.3
+102 silly cache add parsed spec { raw: 'classnames@^2.2.3',
+102 silly cache add   scope: null,
+102 silly cache add   name: 'classnames',
+102 silly cache add   rawSpec: '^2.2.3',
+102 silly cache add   spec: '>=2.2.3 <3.0.0',
+102 silly cache add   type: 'range' }
+103 silly addNamed classnames@>=2.2.3 <3.0.0
+104 verbose addNamed ">=2.2.3 <3.0.0" is a valid semver range for classnames
+105 silly addNameRange { name: 'classnames', range: '>=2.2.3 <3.0.0', hasData: false }
+106 silly mapToRegistry name classnames
+107 silly mapToRegistry using default registry
+108 silly mapToRegistry registry https://registry.npmjs.org/
+109 silly mapToRegistry uri https://registry.npmjs.org/classnames
+110 verbose addNameRange registry:https://registry.npmjs.org/classnames not in flight; fetching
+111 verbose request uri https://registry.npmjs.org/classnames
+112 verbose request no auth needed
+113 info attempt registry request try #1 at 13:54:55
+114 verbose etag "GWN8ERTGFU06RNR5H5J87ABD"
+115 http request GET https://registry.npmjs.org/classnames
+116 http 304 https://registry.npmjs.org/classnames
+117 verbose headers { date: 'Wed, 13 Apr 2016 18:54:55 GMT',
+117 verbose headers   via: '1.1 varnish',
+117 verbose headers   'cache-control': 'max-age=300',
+117 verbose headers   etag: '"GWN8ERTGFU06RNR5H5J87ABD"',
+117 verbose headers   age: '150',
+117 verbose headers   connection: 'keep-alive',
+117 verbose headers   'x-served-by': 'cache-ord1725-ORD',
+117 verbose headers   'x-cache': 'HIT',
+117 verbose headers   'x-cache-hits': '2',
+117 verbose headers   'x-timer': 'S1460573695.306774,VS0,VE0',
+117 verbose headers   vary: 'Accept-Encoding' }
+118 silly get cb [ 304,
+118 silly get   { date: 'Wed, 13 Apr 2016 18:54:55 GMT',
+118 silly get     via: '1.1 varnish',
+118 silly get     'cache-control': 'max-age=300',
+118 silly get     etag: '"GWN8ERTGFU06RNR5H5J87ABD"',
+118 silly get     age: '150',
+118 silly get     connection: 'keep-alive',
+118 silly get     'x-served-by': 'cache-ord1725-ORD',
+118 silly get     'x-cache': 'HIT',
+118 silly get     'x-cache-hits': '2',
+118 silly get     'x-timer': 'S1460573695.306774,VS0,VE0',
+118 silly get     vary: 'Accept-Encoding' } ]
+119 verbose etag https://registry.npmjs.org/classnames from cache
+120 verbose get saving classnames to /Users/noaiolin/.npm/registry.npmjs.org/classnames/.cache.json
+121 verbose correctMkdir /Users/noaiolin/.npm correctMkdir not in flight; initializing
+122 silly addNameRange number 2 { name: 'classnames', range: '>=2.2.3 <3.0.0', hasData: true }
+123 silly addNameRange versions [ 'classnames',
+123 silly addNameRange   [ '1.0.0',
+123 silly addNameRange     '1.1.0',
+123 silly addNameRange     '1.1.1',
+123 silly addNameRange     '1.1.2',
+123 silly addNameRange     '1.1.3',
+123 silly addNameRange     '1.1.4',
+123 silly addNameRange     '1.2.0',
+123 silly addNameRange     '1.2.1',
+123 silly addNameRange     '1.2.2',
+123 silly addNameRange     '2.0.0',
+123 silly addNameRange     '2.1.0',
+123 silly addNameRange     '2.1.1',
+123 silly addNameRange     '2.1.2',
+123 silly addNameRange     '2.1.3',
+123 silly addNameRange     '2.1.4',
+123 silly addNameRange     '2.1.5',
+123 silly addNameRange     '2.2.0',
+123 silly addNameRange     '2.2.1',
+123 silly addNameRange     '2.2.2',
+123 silly addNameRange     '2.2.3' ] ]
+124 silly addNamed classnames@2.2.3
+125 verbose addNamed "2.2.3" is a plain semver version for classnames
+126 silly cache afterAdd classnames@2.2.3
+127 verbose afterAdd /Users/noaiolin/.npm/classnames/2.2.3/package/package.json not in flight; writing
+128 verbose correctMkdir /Users/noaiolin/.npm correctMkdir not in flight; initializing
+129 verbose afterAdd /Users/noaiolin/.npm/classnames/2.2.3/package/package.json written
+130 silly install resolved [ { name: 'classnames',
+130 silly install resolved     version: '2.2.3',
+130 silly install resolved     description: 'A simple utility for conditionally joining classNames together',
+130 silly install resolved     main: 'index.js',
+130 silly install resolved     author: { name: 'Jed Watson' },
+130 silly install resolved     license: 'MIT',
+130 silly install resolved     repository:
+130 silly install resolved      { type: 'git',
+130 silly install resolved        url: 'git+https://github.com/JedWatson/classnames.git' },
+130 silly install resolved     scripts:
+130 silly install resolved      { benchmarks: 'node ./benchmarks/run',
+130 silly install resolved        unit: 'mocha tests/*.js',
+130 silly install resolved        test: 'npm run unit' },
+130 silly install resolved     keywords:
+130 silly install resolved      [ 'react',
+130 silly install resolved        'css',
+130 silly install resolved        'classes',
+130 silly install resolved        'classname',
+130 silly install resolved        'classnames',
+130 silly install resolved        'util',
+130 silly install resolved        'utility' ],
+130 silly install resolved     devDependencies: { benchmark: '^1.0.0', mocha: '^2.1.0' },
+130 silly install resolved     gitHead: 'a6934cd623c1ea2a895575af9c83b08c8bdd3b05',
+130 silly install resolved     bugs: { url: 'https://github.com/JedWatson/classnames/issues' },
+130 silly install resolved     homepage: 'https://github.com/JedWatson/classnames#readme',
+130 silly install resolved     _id: 'classnames@2.2.3',
+130 silly install resolved     _shasum: '551b774b6762a0c0a997187f7ba4f1d603961ac5',
+130 silly install resolved     _from: 'classnames@>=2.2.3 <3.0.0',
+130 silly install resolved     _npmVersion: '2.14.3',
+130 silly install resolved     _nodeVersion: '4.1.0',
+130 silly install resolved     _npmUser: { name: 'jedwatson', email: 'jed.watson@me.com' },
+130 silly install resolved     dist:
+130 silly install resolved      { shasum: '551b774b6762a0c0a997187f7ba4f1d603961ac5',
+130 silly install resolved        tarball: 'https://registry.npmjs.org/classnames/-/classnames-2.2.3.tgz' },
+130 silly install resolved     maintainers: [ [Object] ],
+130 silly install resolved     directories: {},
+130 silly install resolved     _resolved: 'https://registry.npmjs.org/classnames/-/classnames-2.2.3.tgz',
+130 silly install resolved     readme: 'ERROR: No README data found!' } ]
+131 info install classnames@2.2.3 into /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest
+132 info installOne classnames@2.2.3
+133 verbose installOne of classnames to /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest not in flight; installing
+134 verbose correctMkdir /Users/noaiolin/.npm/_locks correctMkdir not in flight; initializing
+135 verbose lock using /Users/noaiolin/.npm/_locks/classnames-f298d96be59b80b5.lock for /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/node_modules/classnames
+136 silly install write writing classnames 2.2.3 to /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/node_modules/classnames
+137 verbose unbuild node_modules/react-geosuggest/node_modules/classnames
+138 silly gentlyRm /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/node_modules/classnames is being purged from base /Users/noaiolin/poetic/mcdonalds
+139 verbose gentlyRm don't care about contents; nuking /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/node_modules/classnames
+140 verbose tar unpack /Users/noaiolin/.npm/classnames/2.2.3/package.tgz
+141 verbose tar unpacking to /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/node_modules/classnames
+142 silly gentlyRm /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/node_modules/classnames is being purged
+143 verbose gentlyRm don't care about contents; nuking /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/node_modules/classnames
+144 silly gunzTarPerm modes [ '755', '644' ]
+145 silly gunzTarPerm extractEntry package.json
+146 silly gunzTarPerm extractEntry README.md
+147 silly gunzTarPerm extractEntry LICENSE
+148 silly gunzTarPerm extractEntry bind.js
+149 silly gunzTarPerm extractEntry dedupe.js
+150 silly gunzTarPerm extractEntry index.js
+151 silly gunzTarPerm extractEntry CONTRIBUTING.md
+152 silly gunzTarPerm extractEntry bower.json
+153 silly gunzTarPerm extractEntry HISTORY.md
+154 verbose write writing to /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/node_modules/classnames/package.json
+155 info preinstall classnames@2.2.3
+156 verbose readDependencies loading dependencies from /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/node_modules/classnames/package.json
+157 verbose readDependencies loading dependencies from /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/node_modules/classnames/package.json
+158 silly install resolved []
+159 verbose about to build /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/node_modules/classnames
+160 info build /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/node_modules/classnames
+161 info linkStuff classnames@2.2.3
+162 silly linkStuff classnames@2.2.3 has /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/node_modules as its parent node_modules
+163 verbose linkBins classnames@2.2.3
+164 verbose linkMans classnames@2.2.3
+165 verbose rebuildBundles classnames@2.2.3
+166 info install classnames@2.2.3
+167 info postinstall classnames@2.2.3
+168 verbose unlock done using /Users/noaiolin/.npm/_locks/classnames-f298d96be59b80b5.lock for /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/node_modules/classnames
+169 verbose about to build /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest
+170 info build /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest
+171 info linkStuff react-geosuggest@1.20.1
+172 silly linkStuff react-geosuggest@1.20.1 has /Users/noaiolin/poetic/mcdonalds/node_modules as its parent node_modules
+173 verbose linkBins react-geosuggest@1.20.1
+174 verbose linkMans react-geosuggest@1.20.1
+175 verbose rebuildBundles react-geosuggest@1.20.1
+176 verbose rebuildBundles [ 'classnames' ]
+177 info install react-geosuggest@1.20.1
+178 info postinstall react-geosuggest@1.20.1
+179 verbose readDependencies loading dependencies from /Users/noaiolin/poetic/mcdonalds/package.json
+180 verbose targetResolver reading package data from /Users/noaiolin/poetic/mcdonalds/node_modules/eslint/package.json
+181 verbose targetResolver reading package data from /Users/noaiolin/poetic/mcdonalds/node_modules/eslint-config-airbnb/package.json
+182 verbose targetResolver reading package data from /Users/noaiolin/poetic/mcdonalds/node_modules/eslint-plugin-jsx-a11y/package.json
+183 verbose targetResolver reading package data from /Users/noaiolin/poetic/mcdonalds/node_modules/eslint-plugin-react/package.json
+184 verbose targetResolver reading package data from /Users/noaiolin/poetic/mcdonalds/node_modules/lodash/package.json
+185 verbose targetResolver reading package data from /Users/noaiolin/poetic/mcdonalds/node_modules/meteor-node-stubs/package.json
+186 verbose targetResolver reading package data from /Users/noaiolin/poetic/mcdonalds/node_modules/mocha/package.json
+187 verbose targetResolver reading package data from /Users/noaiolin/poetic/mcdonalds/node_modules/param-store/package.json
+188 verbose targetResolver reading package data from /Users/noaiolin/poetic/mcdonalds/node_modules/react/package.json
+189 verbose targetResolver reading package data from /Users/noaiolin/poetic/mcdonalds/node_modules/react-addons-test-utils/package.json
+190 verbose targetResolver reading package data from /Users/noaiolin/poetic/mcdonalds/node_modules/react-dom/package.json
+191 verbose targetResolver reading package data from /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest/package.json
+192 verbose targetResolver reading package data from /Users/noaiolin/poetic/mcdonalds/node_modules/.bin/eslint/package.json
+193 verbose targetResolver reading package data from /Users/noaiolin/poetic/mcdonalds/node_modules/.bin/mocha/package.json
+194 verbose already installed skipping react@^0.14.0 /Users/noaiolin/poetic/mcdonalds
+195 silly install resolved []
+196 verbose unlock done using /Users/noaiolin/.npm/_locks/react-geosuggest-2f7f4be6b14ff591.lock for /Users/noaiolin/poetic/mcdonalds/node_modules/react-geosuggest
+197 verbose validateInstall loading /Users/noaiolin/poetic/mcdonalds/package.json for validation
+198 verbose stack Error: The package react@15.0.1 does not satisfy its siblings' peerDependencies requirements!
+198 verbose stack     at /Users/noaiolin/.meteor/packages/meteor-tool/.1.3.1.k0nbmw++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/lib/install.js:125:32
+198 verbose stack     at /Users/noaiolin/.meteor/packages/meteor-tool/.1.3.1.k0nbmw++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/lib/install.js:268:7
+198 verbose stack     at /Users/noaiolin/.meteor/packages/meteor-tool/.1.3.1.k0nbmw++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+198 verbose stack     at /Users/noaiolin/.meteor/packages/meteor-tool/.1.3.1.k0nbmw++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+198 verbose stack     at cb (/Users/noaiolin/.meteor/packages/meteor-tool/.1.3.1.k0nbmw++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+198 verbose stack     at /Users/noaiolin/.meteor/packages/meteor-tool/.1.3.1.k0nbmw++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+198 verbose stack     at cb (/Users/noaiolin/.meteor/packages/meteor-tool/.1.3.1.k0nbmw++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+198 verbose stack     at /Users/noaiolin/.meteor/packages/meteor-tool/.1.3.1.k0nbmw++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+198 verbose stack     at cb (/Users/noaiolin/.meteor/packages/meteor-tool/.1.3.1.k0nbmw++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+198 verbose stack     at /Users/noaiolin/.meteor/packages/meteor-tool/.1.3.1.k0nbmw++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+199 verbose cwd /Users/noaiolin/poetic/mcdonalds
+200 error Darwin 15.2.0
+201 error argv "node" "/Users/noaiolin/.meteor/packages/meteor-tool/.1.3.1.k0nbmw++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/bin/npm" "install" "react-geosuggest" "--save"
+202 error node v0.10.43
+203 error npm  v2.14.22
+204 error code EPEERINVALID
+205 error peerinvalid The package react@15.0.1 does not satisfy its siblings' peerDependencies requirements!
+205 error peerinvalid Peer param-store@0.4.0 wants react@^15.0.0
+205 error peerinvalid Peer react-dom@15.0.1 wants react@^15.0.1
+205 error peerinvalid Peer react-addons-test-utils@15.0.1 wants react@^15.0.1
+205 error peerinvalid Peer react-geosuggest@1.20.1 wants react@^0.14.0
+206 verbose exit [ 1, true ]

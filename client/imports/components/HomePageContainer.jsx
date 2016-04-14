@@ -2,11 +2,19 @@ import React from 'react';
 import { connect } from 'param-store';
 import HomePage from './HomePage';
 import Search from './Search';
+import Results from './Results';
 
 class HomePageContainer extends React.Component {
   constructor(props) {
     super(props);
     console.log();
+    this.state = {
+      addressObj: null,
+    };
+  }
+
+  setAddress(addressObj) {
+    this.setState({ addressObj });
   }
 
   render() {
@@ -24,8 +32,14 @@ class HomePageContainer extends React.Component {
     if (this.props.currentParams.path === 'search') {
       return (
         <div>
-          <Search />
+          <Search setAddress={this.setAddress.bind(this)} />
         </div>
+      );
+    }
+
+    if (this.props.currentParams.path === 'results') {
+      return (
+        <Results />
       );
     }
 
@@ -36,3 +50,6 @@ class HomePageContainer extends React.Component {
 }
 
 export default connect(HomePageContainer, 'path');
+HomePageContainer.propTypes = {
+  currentParams: React.PropTypes.object,
+};
