@@ -7,7 +7,6 @@ export default class HomePage extends React.Component {
     console.log();
   }
   startSearch() {
-    console.log('click');
     ParamStore.set({ path: 'search' });
   }
 
