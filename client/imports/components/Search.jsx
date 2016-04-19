@@ -9,7 +9,7 @@ class Search extends React.Component {
   }
 
   onSuggestSelect(addressObj) {
-    this.props.setAddress(addressObj);
+    this.props.setAddress(addressObj.gmaps.formatted_address);
     ParamStore.set({ path: 'results' });
   }
 
