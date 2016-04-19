@@ -6,14 +6,18 @@ export default class HomePage extends React.Component {
     super(props);
     console.log();
   }
-  startSearch() {
+  setAddressSearch() {
     ParamStore.set({ path: 'search' });
+  }
+  setDateSearch() {
+    ParamStore.set({ path: 'dates' });
   }
 
   render() {
     return (
       <div>
-        <p onClick={this.startSearch}>Start</p>
+        <p onClick={this.setAddressSearch}>Find by address</p>
+        <p onClick={this.setDateSearch}>Find by Date</p>
       </div>
       );
   }

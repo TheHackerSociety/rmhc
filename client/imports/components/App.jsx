@@ -33,7 +33,7 @@ export default class App extends React.Component {
       );
     }
 
-    if (this.props.currentParams.path === 'search') {
+    if (this.props.currentParams.path === 'search/address') {
       return (
         <div>
           <Search setAddress={this.setAddress.bind(this)} />
