@@ -64,5 +64,7 @@
     // Collections
     "Users": true,
     "Events": true,
+    // Google
+    "google": true,
   }
 }
