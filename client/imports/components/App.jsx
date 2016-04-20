@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import Search from './Search';
 import ParamStore from 'param-store';
 import Results from './Results.jsx';
+import Dates from './Dates.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ export default class App extends React.Component {
       );
     }
 
-    if (this.props.currentParams.path === 'search/address') {
+    if (this.props.currentParams.path === 'search') {
       return (
         <div>
           <Search setAddress={this.setAddress.bind(this)} />
@@ -49,6 +50,13 @@ export default class App extends React.Component {
       );
     }
 
+    if (this.props.currentParams.path === 'dates') {
+      return (
+        <div>
+          <Dates />
+        </div>
+      );
+    }
     return (
       <div></div>
     );

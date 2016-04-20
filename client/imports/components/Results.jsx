@@ -107,7 +107,6 @@ export default createContainer((address) => {
 }, Results);
 
 Results.propTypes = {
-  loading: React.PropTypes.bool,
   events: React.PropTypes.array,
   origin: React.PropTypes.object,
 };
