@@ -1,7 +1,7 @@
 import React from 'react';
 import ParamStore from 'param-store';
 
-export default class Information extends React.Component {
+export default class Info extends React.Component {
   render() {
     return (
       <div className="body-color">

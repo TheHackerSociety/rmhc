@@ -1,21 +1,17 @@
 import React from 'react';
+import EventsByLocationContainer from './EventsByLocationContainer';
 import IndexContainer from './IndexContainer';
-import InformationContainer from './InformationContainer';
-import Location2Container from './Location2Container';
-import Location3Container from './Location3Container';
-import ResultsDate1Container from './ResultsDate1Container';
-import StyleGuideContainer from './StyleGuideContainer';
+import InfoContainer from './InfoContainer';
+import SearchContainer from './SearchContainer';
 
 export default class App extends React.Component {
   render() {
     return (
       <div>
+        <EventsByLocationContainer/>
         <IndexContainer/>
-        <InformationContainer/>
-        <Location2Container/>
-        <Location3Container/>
-        <ResultsDate1Container/>
-        <StyleGuideContainer/>
+        <InfoContainer/>
+        <SearchContainer/>
       </div>
       );
   }

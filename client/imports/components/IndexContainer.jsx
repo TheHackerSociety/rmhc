@@ -4,18 +4,12 @@ import Index from './Index';
 
 class IndexContainer extends React.Component {
   render() {
-    const style = {
-      position: 'absolute'
-    };
-    if (this.props.currentParams.path !== 'index') {
+    const {path} = this.props.currentParams;
+    if (path !== 'index' || path !== '') {
       return null;
     }
 
-    return (
-      <div style={style}>
-        <Index {...this.props}/>
-      </div>
-      );
+    return <Index {...this.props}/>;
   }
 }
 

@@ -1,17 +1,17 @@
 import React from 'react';
 import ParamStore from 'param-store';
 
-export default class ResultsDate1 extends React.Component {
+export default class EventsByLocation extends React.Component {
   render() {
     return (
       <div className="body-color">
         <div className="container">
           <nav>
-            <img src="images/triangle-icon.svg" className="back-arrow" /><a href="location-3.html" className="nav-text" onClick={e => {
-                                                                                                                                   ParamStore.set({
-                                                                                                                                     path: 'location-3'
-                                                                                                                                   });e.preventDefault();
-                                                                                                                                 }}>Back</a>
+            <img src="images/triangle-icon.svg" className="back-arrow" /><a href="search.html" className="nav-text" onClick={e => {
+                                                                                                                               ParamStore.set({
+                                                                                                                                 path: 'search'
+                                                                                                                               });e.preventDefault();
+                                                                                                                             }}>Back</a>
           </nav>
           <section>
             <div className="location-top-info">
