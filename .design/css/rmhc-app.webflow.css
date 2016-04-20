@@ -1,0 +1,281 @@
+p {
+  margin-bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
+  color: #68645d;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+ul {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.btn {
+  display: block;
+  font-family: Montserrat, sans-serif;
+  color: #000;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.primary-btn-color {
+  background-color: #ffc829;
+}
+
+.secondary-btn-color {
+  background-color: #ffda6e;
+}
+
+.primary-font-color {
+  color: #fff;
+}
+
+.container {
+  position: relative;
+  display: block;
+  max-width: 320px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #fff;
+}
+
+.body-color {
+  background-color: #000;
+}
+
+.center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.center.care-mobile-logo {
+  margin-top: 30px;
+  margin-bottom: 48px;
+}
+
+.info-icon {
+  margin-top: 9px;
+  margin-right: 10px;
+  margin-bottom: 11px;
+  float: right;
+}
+
+.btn-container {
+  width: 50%;
+  padding-top: 25px;
+  padding-bottom: 16px;
+  float: left;
+  text-decoration: none;
+}
+
+.btn-text {
+  font-family: Montserrat, sans-serif;
+  color: #000;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.nav-text {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+  color: #628ecc;
+  text-decoration: none;
+}
+
+.nav-text.cancel {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.address-input {
+  position: relative;
+}
+
+.input {
+  min-height: 50px;
+  margin-bottom: 0px;
+}
+
+.address-icon {
+  margin-top: -38px;
+  margin-right: 12px;
+  float: right;
+}
+
+.address-prompt {
+  margin-bottom: 30px;
+  padding-top: 200px;
+  font-family: Montserrat, sans-serif;
+  color: #628ecc;
+  font-size: 18px;
+  text-align: center;
+}
+
+.address-option {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Open Sans', sans-serif;
+  color: #444;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.location-top-info {
+  padding-top: 18px;
+  padding-bottom: 20px;
+  font-family: Montserrat, sans-serif;
+  color: #68645d;
+  font-size: 18px;
+  text-align: center;
+}
+
+.card-info {
+  width: 100%;
+  padding-bottom: 25px;
+  text-decoration: none;
+}
+
+.location-card-header {
+  padding-top: 11px;
+  padding-bottom: 13px;
+  border-top: 1px solid #b9d5fd;
+  background-color: #4b74ae;
+}
+
+.secondary-font-color {
+  color: #fff;
+}
+
+.secondary-font-color.day {
+  margin-left: 20px;
+  float: left;
+  font-family: Montserrat, sans-serif;
+  line-height: 13px;
+  font-weight: 700;
+}
+
+.secondary-font-color.location-name {
+  display: inline-block;
+  max-width: 220px;
+  margin-top: 9px;
+  margin-left: 20px;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+}
+
+.secondary-font-color.location-address {
+  margin-top: 13px;
+  margin-bottom: 13px;
+  margin-left: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.secondary-font-color.location-time {
+  margin-left: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.secondary-font-color.day-number {
+  margin-top: 3px;
+  margin-left: 8px;
+  float: left;
+  font-family: Montserrat, sans-serif;
+  font-size: 28px;
+}
+
+.back-arrow {
+  margin-top: -2px;
+  margin-right: 9px;
+  margin-left: 10px;
+}
+
+.date-container {
+  float: left;
+}
+
+.location-icon {
+  display: block;
+  margin-top: 9px;
+  margin-right: 20px;
+  float: right;
+}
+
+.miles-container {
+  margin-right: 20px;
+  float: right;
+}
+
+.miles-number {
+  margin-top: 3px;
+  margin-right: 8px;
+  float: left;
+  font-family: Montserrat, sans-serif;
+  color: #ffc829;
+  font-size: 28px;
+}
+
+.miles-text {
+  float: left;
+  font-family: Montserrat, sans-serif;
+  color: #ffc829;
+  line-height: 13px;
+  font-weight: 700;
+}
+
+.details-section {
+  padding: 28px 14px 30px 20px;
+}
+
+.nav-padding {
+  padding-bottom: 10px;
+}
+
+.location-card {
+  background-color: #628ecc;
+}
+
+.service-paragraph {
+  margin-bottom: 12px;
+}
+
+.bold-text {
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .container {
+    margin-top: 0px;
+  }
+  .btn-container {
+    text-decoration: none;
+  }
+}
