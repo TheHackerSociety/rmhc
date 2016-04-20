@@ -5,7 +5,7 @@ import Index from './Index';
 class IndexContainer extends React.Component {
   render() {
     const {path} = this.props.currentParams;
-    if (path !== 'index' || path !== '') {
+    if (path !== 'index' && path !== '') {
       return null;
     }
 
