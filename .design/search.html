@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Wed Apr 20 2016 16:04:43 GMT+0000 (UTC) -->
-<html data-wf-site="570e731a22afb3312d41211d" data-wf-page="570eb035704d30cc18133e91" data-wf-domain="%%PUBLISH_URL_REPLACEMENT%%">
+<!-- Last Published: Fri Apr 22 2016 15:02:09 GMT+0000 (UTC) -->
+<html data-wf-site="570e731a22afb3312d41211d" data-wf-page="570eb035704d30cc18133e91">
 <head>
   <meta charset="utf-8">
   <title>search</title>
@@ -27,26 +27,32 @@
   <div class="container">
     <nav><a href="index.html" class="nav-text cancel">Cancel</a>
     </nav>
-    <a href="#" class="w-inline-block address-option">
-      <div>675 Bering St. Houston TX, USA</div>
-    </a>
-    <a href="#" class="w-inline-block address-option">
-      <div>675 Bering St. Houston TX, USA</div>
-    </a>
-    <a href="#" class="w-inline-block address-option">
-      <div>675 Bering St. Houston TX, USA</div>
-    </a>
-    <div class="address-input">
-      <div class="w-form">
-        <form id="email-form" name="email-form" data-name="Email Form" class="w-clearfix">
-          <input id="address" type="text" placeholder="Address or zip" name="address" data-name="address" class="w-input input"><img alt="target icon" src="images/input-icon.svg" class="address-icon">
-        </form>
-        <div class="w-form-done">
-          <p>Thank you! Your submission has been received!</p>
-        </div>
-        <div class="w-form-fail">
-          <p>Oops! Something went wrong while submitting the form</p>
-        </div>
+    <div class="address-container">
+      <div class="input-container">
+        <a href="#" class="w-inline-block address-option">
+          <div>675 Bering St. Houston TX, USA</div>
+        </a>
+      </div>
+      <div class="input-container">
+        <a href="#" class="w-inline-block address-option">
+          <div>675 Bering St. Houston TX, USA</div>
+        </a>
+      </div>
+      <div class="input-container">
+        <a href="#" class="w-inline-block address-option">
+          <div>675 Bering St. Houston TX, USA</div>
+        </a>
+      </div>
+    </div>
+    <div class="w-form address-input">
+      <form id="email-form" name="email-form" data-name="Email Form" class="w-clearfix form">
+        <input id="address-2" type="text" placeholder="Address or zip" name="address-2" data-name="Address 2" class="w-input input"><img alt="target icon" src="images/input-icon.svg" class="address-icon">
+      </form>
+      <div class="w-form-done">
+        <p>Thank you! Your submission has been received!</p>
+      </div>
+      <div class="w-form-fail">
+        <p>Oops! Something went wrong while submitting the form</p>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Wed Apr 20 2016 16:04:43 GMT+0000 (UTC) -->
-<html data-wf-site="570e731a22afb3312d41211d" data-wf-page="570ea1f57eac40c718031ae3" data-wf-domain="%%PUBLISH_URL_REPLACEMENT%%">
+<!-- Last Published: Fri Apr 22 2016 15:02:09 GMT+0000 (UTC) -->
+<html data-wf-site="570e731a22afb3312d41211d" data-wf-page="570ea1f57eac40c718031ae3">
 <head>
   <meta charset="utf-8">
   <title>RMHC app</title>
@@ -28,17 +28,15 @@
     </nav>
     <div class="address-prompt">Type you address or zip,
       <br> or use your location</div>
-    <div class="address-input">
-      <div class="w-form">
-        <form id="email-form" name="email-form" data-name="Email Form" class="w-clearfix">
-          <input id="address" type="text" placeholder="Address or zip" name="address" data-name="address" class="w-input input"><img alt="target icon" src="images/input-icon.svg" class="address-icon">
-        </form>
-        <div class="w-form-done">
-          <p>Thank you! Your submission has been received!</p>
-        </div>
-        <div class="w-form-fail">
-          <p>Oops! Something went wrong while submitting the form</p>
-        </div>
+    <div class="w-form address-input">
+      <form id="email-form" name="email-form" data-name="Email Form" class="w-clearfix form">
+        <input id="address" type="text" placeholder="Address or zip" name="address" data-name="address" class="w-input input"><img alt="target icon" src="images/input-icon.svg" class="address-icon">
+      </form>
+      <div class="w-form-done">
+        <p>Thank you! Your submission has been received!</p>
+      </div>
+      <div class="w-form-fail">
+        <p>Oops! Something went wrong while submitting the form</p>
       </div>
     </div>
   </div>

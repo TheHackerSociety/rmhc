@@ -8,37 +8,97 @@ export default class Search extends React.Component {
         <div className="container">
           <nav>
             <a href="index.html" className="nav-text cancel" onClick={e => {
-              ParamStore.set({path: 'index' });
-              e.preventDefault();
-            }}
-            >
-              Cancel
-            </a>
+                                                                        ParamStore.set({
+                                                                          path: 'index'
+                                                                        });e.preventDefault();
+                                                                      }}>Cancel</a>
           </nav>
-          <a href="#" className="w-inline-block address-option">
-            <div> 675 Bering St. Houston TX, USA </div>
-          </a>
-          <a href="#" className="w-inline-block address-option">
-            <div> 675 Bering St. Houston TX, USA </div>
-          </a>
-          <a href="#" className="w-inline-block address-option">
-            <div> 675 Bering St. Houston TX, USA </div>
-          </a>
-          <div className="address-input">
-            <div className="w-form">
-              <form id="email-form"
-                name="email-form"
-                data-name="Email Form"
-                className="w-clearfix">
-                <input id="address"
-                  type="text"
-                  placeholder="Address or zip"
-                  name="address"
-                  data-name="address"
-                  className="w-input input" />
-                  <img alt="target icon" src="images/input-icon.svg" className="address-icon" />
-              </form>
+          <div className="address-container">
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
             </div>
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
+            </div>
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
+            </div>
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
+            </div>
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
+            </div>
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
+            </div>
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
+            </div>
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
+            </div>
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
+            </div>
+
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
+            </div>
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
+            </div>
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
+            </div>
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
+            </div>
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
+            </div>
+            <div className="input-container">
+              <a href="#" className="w-inline-block address-option">
+                <div> 675 Bering St. Houston TX, USA </div>
+              </a>
+            </div>
+          </div>
+          <div className="address-input">
+            <input id="address-2"
+              type="text"
+              placeholder="Address or zip"
+              name="address-2"
+              data-name="Address 2"
+              className="w-input input" />
+            <img alt="target icon" src="images/input-icon.svg" className="address-icon" />
           </div>
         </div>
       </div>

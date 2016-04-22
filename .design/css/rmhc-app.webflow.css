@@ -43,10 +43,17 @@ li {
 
 .container {
   position: relative;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
   max-width: 320px;
   margin-right: auto;
   margin-left: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   background-color: #fff;
 }
 
@@ -89,6 +96,13 @@ li {
   text-align: center;
 }
 
+.btn-wrapper {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
 .nav-text {
   display: inline-block;
   margin-top: 10px;
@@ -103,7 +117,11 @@ li {
 }
 
 .address-input {
-  position: relative;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .input {
@@ -118,8 +136,8 @@ li {
 }
 
 .address-prompt {
-  margin-bottom: 30px;
-  padding-top: 200px;
+  padding-top: 96px;
+  padding-bottom: 66px;
   font-family: Montserrat, sans-serif;
   color: #628ecc;
   font-size: 18px;
@@ -263,6 +281,30 @@ li {
 
 .bold-text {
   font-weight: 600;
+}
+
+.form {
+  margin-bottom: 0px;
+}
+
+.address-container {
+  overflow: scroll;
+}
+
+.input-container {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -ms-flex-line-pack: distribute;
+  align-content: space-around;
 }
 
 @media (max-width: 767px) {
