@@ -1,26 +1,32 @@
 import React from 'react';
-import Geosuggest from 'react-geosuggest';
+import GooglePlaces from './GooglePlaces.jsx';
 import ParamStore from 'param-store';
+import ItemComponent from './ItemComponent.jsx';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     console.log();
+    this.state = {
+      query: '',
+    };
   }
 
-  onSuggestSelect(addressObj) {
-    this.props.setAddress(addressObj.gmaps.formatted_address);
-    ParamStore.set({ path: 'results' });
+  setQuery(e) {
+    const query = e.target.value;
+    this.setState({ query });
   }
 
   render() {
     return (
       <div>
-        Search
-        <Geosuggest
-          className={'results-container'}
-          onSuggestSelect={this.onSuggestSelect.bind(this)}
+        <div id='results'></div>
+        <GooglePlaces
+          query={this.state.query}
+          itemComponent={<ItemComponent/>}
+          callback={this.props.setAddress.bind(this)}
         />
+        <input onChange={this.setQuery.bind(this)} />
       </div>
     );
   }

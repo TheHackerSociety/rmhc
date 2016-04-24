@@ -19,8 +19,10 @@ export default class App extends React.Component {
     ParamStore.set({ path: 'homePage' });
   }
 
-  setAddress(addressObj) {
-    this.setState({ addressObj });
+  setAddress(address) {
+    console.log(address)
+    this.setState({ address });
+    ParamStore.set({path: 'results' })
   }
   render() {
     const style = {
@@ -45,7 +47,7 @@ export default class App extends React.Component {
     if (this.props.currentParams.path === 'results') {
       return (
         <div>
-          <Results origin={this.state.addressObj} />
+          <Results origin={this.state.address} />
         </div>
       );
     }
