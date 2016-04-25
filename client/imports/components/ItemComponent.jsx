@@ -17,7 +17,7 @@ class ItemComponent extends React.Component {
         {this.props.suggestions.map((suggestion, index) => {
           return (
             <div className="input-container" key={index}>
-              <a className="w-inline-block address-option"
+              <a href='#' className="w-inline-block address-option"
                 onClick={this.setAddress.bind(this)}
               >
                 {suggestion.description}
