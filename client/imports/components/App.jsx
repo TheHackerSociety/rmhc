@@ -3,15 +3,33 @@ import EventsByLocationContainer from './EventsByLocationContainer';
 import IndexContainer from './IndexContainer';
 import InfoContainer from './InfoContainer';
 import SearchContainer from './SearchContainer';
+import ParamStore from 'param-store';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log();
+    this.state = {
+      address: null,
+    };
+  }
+
+  setAddress(address) {
+    ParamStore.set({ path: 'events-by-location' });
+    this.setState({ address });
+  }
+
   render() {
     return (
       <div>
-        <EventsByLocationContainer/>
-        <IndexContainer/>
-        <InfoContainer/>
-        <SearchContainer/>
+        <EventsByLocationContainer
+          origin={this.state.address}
+        />
+        <IndexContainer />
+        <InfoContainer />
+        <SearchContainer
+          setAddress={this.setAddress.bind(this)}
+        />
       </div>
       );
   }
