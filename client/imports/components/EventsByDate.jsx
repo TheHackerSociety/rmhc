@@ -77,7 +77,10 @@ export default class EventsByDate extends React.Component {
                   </div>
                 </div>
                 <div className="w-clearfix card-info">
-                  <a className="w-inline-block w-clearfix location-icon">
+                  <a href={`https://www.google.com/maps/place/${event.address}/`}
+                    target="_blank"
+                    className="w-inline-block w-clearfix location-icon"
+                  >
                     <img alt="location icon"
                       src="images/location-icon.svg"
                     />
