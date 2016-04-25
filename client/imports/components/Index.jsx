@@ -43,8 +43,12 @@ export default class Index extends React.Component {
               <div className="btn-text"> Find by
                 <br /> location </div>
             </a>
-            <a href="#"
+            <a href="events-by-date.html"
               className="w-inline-block btn-container secondary-btn-color"
+              onClick={e => {
+                ParamStore.set({ path: 'events-by-date' });
+                e.preventDefault();
+              }}
             >
               <img alt="Find by location date icon"
                 src="images/location-bus.svg"

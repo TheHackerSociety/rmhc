@@ -1,5 +1,6 @@
 import React from 'react';
 import EventsByLocationContainer from './EventsByLocationContainer';
+import EventsByDateContainer from './EventsByDateContainer';
 import IndexContainer from './IndexContainer';
 import InfoContainer from './InfoContainer';
 import SearchContainer from './SearchContainer';
@@ -25,6 +26,7 @@ export default class App extends React.Component {
         <EventsByLocationContainer
           origin={this.state.address}
         />
+        <EventsByDateContainer />
         <IndexContainer />
         <InfoContainer />
         <SearchContainer

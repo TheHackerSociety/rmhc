@@ -113,6 +113,9 @@ export default class EventsByLocation extends React.Component {
               Back
             </a>
           </nav>
+          <div className="address-prompt">Type you address or zip,
+              <br /> or use your location
+          </div>
           {
             this.state.groupedArray.map((array, index) => {
               return (

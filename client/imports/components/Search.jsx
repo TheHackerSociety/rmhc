@@ -32,6 +32,13 @@ export default class Search extends React.Component {
               Cancel
             </a>
           </nav>
+          {
+            this.state.query ?
+              null :
+              <div className="address-prompt">Type you address or zip,
+                <br /> or use your location
+              </div>
+          }
           <GooglePlaces
             query={this.state.query}
             callback={this.props.setAddress.bind(this)}
