@@ -1,5 +1,6 @@
 import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
+import { groupBy } from 'lodash.groupBy';
 
 class Results extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class Results extends React.Component {
       loading: true,
       dists: null,
       newEvents: null,
+      groupedEvents:null,
     };
   }
 
@@ -37,12 +39,12 @@ class Results extends React.Component {
     this.getGoogleDistance(origin, destinations, (response, status) => {
       if (status === google.maps.DistanceMatrixStatus.OK) {
         this.setState({ dists: response.rows[0] });
-        this.attachDistanceAndSort();
+        this.attachDistanceSortAndGroup();
       }
     });
   }
 
-  attachDistanceAndSort() {
+  attachDistanceSortAndGroup() {
     const newEvents = _.clone(this.props.events);
     newEvents.forEach((event, index) => {
       event.distance = this.state.dists.elements[index].distance.value;
@@ -56,23 +58,21 @@ class Results extends React.Component {
       }
       return 0;
     });
-    this.setState({ newEvents, loading: false });
+    const groupedEvents =_.groupBy(newEvents, (event) => {
+      if (event.distance/1609.344 > 10 && event.distance/1609.344 < 20) {
+        return 10;
+      }
+      if (event.distance/1609.344 >20 && event.distance/1609.344 < 30) {
+        return 20;
+      }
+    });
+
+    this.setState({groupedEvents, loading: false });
   }
 
-  showResult(e) {
-    console.log(e.target);
-  }
-
-  render() {
-    if (this.state.loading) {
-      return (
-        <div>Loading</div>
-      );
-    }
-
-    return (
-      <div>
-        { this.state.newEvents.map((event, index) => {
+  renderList(){
+    for(var group in this.state.groupedEvents) {
+       return this.state.groupedEvents[group].map((event, index) => {
           return (
             <div key={index}>
               <div>
@@ -90,7 +90,20 @@ class Results extends React.Component {
               <div>-----</div>
             </div>
           );
-        })}
+        });
+    }
+  }
+
+  render() {
+    if (this.state.loading) {
+      return (
+        <div>Loading</div>
+      );
+    }
+
+    return (
+      <div>
+        {this.renderList() }
       </div>
     );
   }
@@ -110,3 +123,23 @@ Results.propTypes = {
   events: React.PropTypes.array,
   origin: React.PropTypes.object,
 };
+
+//this.state.newEvents.map((event, index) => {
+          //return (
+            //<div key={index}>
+              //<div>
+              //Distance: {
+               //(event.distance / 1609.344).toFixed(2)
+              //} miles
+              //</div>
+              //<div>{event.date.toDateString()}</div>
+              //<div onClick={this.showResult}>
+                //<div>{event.place}</div>
+                //<div>{event.address}</div>
+                //<div>{event.morningStartTime}-{event.morningEndTime}</div>
+                //<div>{event.noonStartTime}-{event.noonEndTime}</div>
+              //</div>
+              //<div>-----</div>
+            //</div>
+          //);
+        //})
