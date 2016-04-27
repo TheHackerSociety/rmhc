@@ -1,12 +1,11 @@
 import React from 'react';
-import HomePageContainer from './HomePageContainer';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <HomePageContainer/>
-      </div>
-      );
-  }
+export default function App() {
+  return (
+    <h1 style={{ color: 'black', background: 'white' }}>
+      React is working!
+      <br />
+      (find me at ./client/imports/components/App.jsx)
+    </h1>
+  );
 }

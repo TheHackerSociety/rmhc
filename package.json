@@ -3,23 +3,24 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "test": "npm run lint && chimp --mocha --path=tests",
-    "lint": "eslint . --ext .jsx, js",
-    "fix": "eslint . --ext .jsx, js --fix",
+    "test": "npm run lint && chimp --mocha --path=tests --browser=phantomjs",
+    "lint": "eslint . --ext .jsx,.js",
+    "fix": "eslint . --ext .jsx,.js --fix",
     "watch": "chimp --ddp=http://localhost:3000 --watch --mocha --path=tests"
   },
   "dependencies": {
-    "lodash": "^4.10.0",
+    "lodash": "^4.11.1",
     "meteor-node-stubs": "~0.2.0",
     "param-store": "poetic/param-store",
     "react": "^15.0.1",
     "react-dom": "^15.0.1"
   },
   "devDependencies": {
-    "eslint": "^2.7.0",
-    "eslint-config-airbnb": "^7.0.0",
-    "eslint-plugin-jsx-a11y": "^0.6.2",
-    "eslint-plugin-react": "^4.3.0",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^8.0.0",
+    "eslint-plugin-import": "^1.6.0",
+    "eslint-plugin-jsx-a11y": "^1.0.3",
+    "eslint-plugin-react": "^5.0.1",
     "mocha": "^2.4.5",
     "react-addons-test-utils": "^15.0.1"
   }
