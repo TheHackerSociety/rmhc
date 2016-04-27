@@ -5,8 +5,14 @@ Events.attachSchema(new SimpleSchema({
     type: String,
   },
   address: {
-    type: String,
+    type: Object,
   },
+    "address.$.street": {
+      type: String,
+    },
+    "address.$.zip": {
+      type: String,
+    },
   date: {
     type: Date,
   },

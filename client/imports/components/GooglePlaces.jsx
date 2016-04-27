@@ -10,28 +10,35 @@ class GooglePlaces extends React.Component {
   }
 
   componentWillReceiveProps(props) {
-    if (props.query === '') {
+    if (props.input === '') {
       this.setState({ suggestions: '' });
       return false;
     }
     const service = new google.maps.places.AutocompleteService();
-    service.getQueryPredictions({ input: props.query }, this.displaySuggestions.bind(this));
+    service.getQueryPredictions({ input: props.input }, this.displaySuggestions.bind(this));
     return true;
   }
 
   displaySuggestions(suggestions) {
     this.setState({ suggestions });
+
   }
 
   render() {
+    const self = this;
     if (this.state.suggestions) {
       return (
         <div>
           {
-            React.cloneElement(this.props.itemComponent,
-              { suggestions: this.state.suggestions,
-                callback: this.props.callback.bind(this),
-              })
+            this.state.suggestions.map((suggestion, index) => {
+               return (
+                <div key={index}>
+                { React.cloneElement(this.props.itemComponent,
+                  { itemProps: this.props.itemProps, suggestion})
+                }
+                  </div>
+                 );
+            })
           }
         </div>
       );
@@ -45,7 +52,6 @@ class GooglePlaces extends React.Component {
 
 export default GooglePlaces;
 GooglePlaces.propTypes = {
-  query: React.PropTypes.string,
   itemComponent: React.PropTypes.element,
-  callback: React.PropTypes.func,
+  itemProps: React.PropTypes.obj,
 };

@@ -77,7 +77,7 @@ export default class EventsByDate extends React.Component {
                   </div>
                 </div>
                 <div className="w-clearfix card-info">
-                  <a href={`https://www.google.com/maps/place/${event.address}/`}
+                  <a href={`https://www.google.com/maps/place/${event.address.street} ${event.address.zip}/`}
                     target="_blank"
                     className="w-inline-block w-clearfix location-icon"
                   >
@@ -89,7 +89,9 @@ export default class EventsByDate extends React.Component {
                     {event.place}
                   </div>
                   <div className="secondary-font-color location-address">
-                    {event.address}
+                    {event.address.street}
+                    <br />
+                    {event.address.zip}
                   </div>
                   <div className="secondary-font-color location-time">
                     {event.morningStartTime}-{event.morningEndTime}

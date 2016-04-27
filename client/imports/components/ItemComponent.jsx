@@ -7,26 +7,22 @@ class ItemComponent extends React.Component {
   }
 
   setAddress(e) {
-    this.props.callback(e.target.text);
+    this.props.itemProps.onClick(e.target.text);
   }
 
   render() {
-    if (this.props.suggestions) {
-      return (
-        <div className="address-container">
-        {this.props.suggestions.map((suggestion, index) => {
-          return (
-            <div className="input-container" key={index}>
+    if (this.props.suggestion) {
+        return (
+          <div className="address-container">
+            <div className="input-container">
               <a href='#' className="w-inline-block address-option"
                 onClick={this.setAddress.bind(this)}
               >
-                {suggestion.description}
+                {this.props.suggestion.description}
               </a>
             </div>
-          );
-        })}
-        </div>
-      );
+          </div>
+        );
     }
     return (<div></div>);
   }
@@ -34,6 +30,6 @@ class ItemComponent extends React.Component {
 
 export default ItemComponent;
 ItemComponent.propTypes = {
-  suggestions: React.PropTypes.array,
-  callback: React.PropTypes.func,
+  itemProps: React.PropTypes.obj,
+  suggestion: React.PropTypes.obj,
 };
