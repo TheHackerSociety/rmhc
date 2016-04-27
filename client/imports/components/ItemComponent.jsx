@@ -7,18 +7,20 @@ class ItemComponent extends React.Component {
   }
 
   setAddress(e) {
-    this.props.itemProps.onClick(e.target.text);
+    this.props.onClick(e.target.text);
   }
 
   render() {
-    if (this.props.suggestion) {
+    const {suggestion} = this.props;
+
+    if (suggestion) {
         return (
           <div className="address-container">
             <div className="input-container">
               <a href='#' className="w-inline-block address-option"
                 onClick={this.setAddress.bind(this)}
               >
-                {this.props.suggestion.description}
+              {suggestion.description}
               </a>
             </div>
           </div>

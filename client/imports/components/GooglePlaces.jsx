@@ -3,55 +3,45 @@ import React from 'react';
 class GooglePlaces extends React.Component {
   constructor(props) {
     super(props);
-    console.log();
-    this.state = {
-      suggestions: null,
-    };
+    this.state = { suggestions: [] };
   }
 
   componentWillReceiveProps(props) {
-    if (props.input === '') {
-      this.setState({ suggestions: '' });
+    if (!props.input) {
+      this.setState({ suggestions: [] });
       return false;
     }
     const service = new google.maps.places.AutocompleteService();
-    service.getQueryPredictions({ input: props.input }, this.displaySuggestions.bind(this));
+    service.getQueryPredictions(
+      { input: props.input },
+      (suggestions = []) => {
+        this.setState({ suggestions });
+      }
+    );
     return true;
   }
 
-  displaySuggestions(suggestions) {
-    this.setState({ suggestions });
-
-  }
-
   render() {
-    const self = this;
-    if (this.state.suggestions) {
-      return (
-        <div>
-          {
-            this.state.suggestions.map((suggestion, index) => {
-               return (
-                <div key={index}>
-                { React.cloneElement(this.props.itemComponent,
-                  { itemProps: this.props.itemProps, suggestion})
-                }
-                  </div>
-                 );
-            })
-          }
-        </div>
-      );
-    }
+    const {itemProps, itemComponent, ...other} = this.props
+    const ItemComponent = itemComponent;
+    console.log(this.state.suggestions)
+
     return (
-       <div>
-       </div>
+      <div {...other}>
+        {
+          this.state.suggestions.map((suggestion, index) => {
+            return (
+              <ItemComponent key={index} suggestion={suggestion} {...itemProps}/>
+            );
+          })
+        }
+      </div>
     );
   }
 }
 
 export default GooglePlaces;
 GooglePlaces.propTypes = {
-  itemComponent: React.PropTypes.element,
+  itemComponent: React.PropTypes.func,
   itemProps: React.PropTypes.obj,
 };
