@@ -1,0 +1,475 @@
+p {
+  margin-bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
+  color: #68645d;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+ul {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.btn {
+  display: block;
+  font-family: Montserrat, sans-serif;
+  color: #000;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.primary-btn-color {
+  background-color: #ffc829;
+}
+
+.secondary-btn-color {
+  background-color: #ffda6e;
+}
+
+.primary-font-color {
+  color: #fff;
+}
+
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  max-width: 320px;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.body-color {
+  background-color: #000;
+}
+
+.center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.center.care-mobile-logo {
+  margin-top: 30px;
+  margin-bottom: 48px;
+}
+
+.info-icon {
+  margin-top: 9px;
+  margin-right: 10px;
+  margin-bottom: 11px;
+  float: right;
+}
+
+.btn-container {
+  width: 50%;
+  padding-top: 25px;
+  padding-bottom: 16px;
+  float: left;
+  text-decoration: none;
+}
+
+.btn-text {
+  font-family: Montserrat, sans-serif;
+  color: #000;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.btn-wrapper {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.nav-text {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+  color: #628ecc;
+  text-decoration: none;
+}
+
+.nav-text.cancel {
+  margin-left: 20px;
+}
+
+.address-input {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.input {
+  min-height: 50px;
+  margin-bottom: 0px;
+}
+
+.address-icon {
+  margin-top: -38px;
+  margin-right: 12px;
+  float: right;
+}
+
+.address-prompt {
+  padding-top: 96px;
+  padding-bottom: 66px;
+  font-family: Montserrat, sans-serif;
+  color: #628ecc;
+  font-size: 18px;
+  text-align: center;
+}
+
+.address-option {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Open Sans', sans-serif;
+  color: #444;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.location-top-info {
+  position: relative;
+  padding-top: 18px;
+  padding-bottom: 20px;
+  font-family: Montserrat, sans-serif;
+  color: #68645d;
+  font-size: 18px;
+  text-align: center;
+}
+
+.card-info {
+  width: 100%;
+  padding-bottom: 25px;
+  text-decoration: none;
+}
+
+.card-info.blank {
+  background-color: #d5d5d5;
+}
+
+.location-card-header {
+  padding-top: 11px;
+  padding-bottom: 13px;
+  border-top: 1px solid #b9d5fd;
+  background-color: #4b74ae;
+}
+
+.location-card-header.blank {
+  background-color: #8e9296;
+}
+
+.secondary-font-color {
+  color: #fff;
+}
+
+.secondary-font-color.day {
+  float: left;
+  font-family: Montserrat, sans-serif;
+  line-height: 13px;
+  font-weight: 700;
+}
+
+.secondary-font-color.location-name {
+  display: inline-block;
+  max-width: 220px;
+  margin-top: 9px;
+  margin-left: 20px;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+}
+
+.secondary-font-color.location-address {
+  margin-top: 13px;
+  margin-bottom: 13px;
+  margin-left: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.secondary-font-color.location-time {
+  margin-left: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.secondary-font-color.day-number {
+  margin-top: 3px;
+  margin-left: 8px;
+  float: left;
+  font-family: Montserrat, sans-serif;
+  font-size: 28px;
+}
+
+.secondary-font-color.alert {
+  display: block;
+  width: 90%;
+  margin: 13px auto;
+  background-image: url('../images/exit-x.svg');
+  background-position: 100% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.back-arrow {
+  margin-top: -2px;
+  margin-right: 9px;
+  margin-left: 10px;
+}
+
+.date-container {
+  margin-left: 20px;
+  float: left;
+}
+
+.location-icon {
+  display: block;
+  margin-top: 9px;
+  margin-right: 20px;
+  float: right;
+}
+
+.miles-container {
+  margin-right: 20px;
+  float: right;
+}
+
+.miles-number {
+  margin-top: 3px;
+  margin-right: 8px;
+  float: left;
+  font-family: Montserrat, sans-serif;
+  color: #ffc829;
+  font-size: 28px;
+}
+
+.miles-text {
+  float: left;
+  font-family: Montserrat, sans-serif;
+  color: #ffc829;
+  line-height: 13px;
+  font-weight: 700;
+}
+
+.details-section {
+  padding: 28px 14px 30px 20px;
+}
+
+.nav-padding {
+  padding-bottom: 10px;
+}
+
+.location-card {
+  background-color: #628ecc;
+}
+
+.service-paragraph {
+  margin-bottom: 12px;
+}
+
+.bold-text {
+  font-weight: 600;
+}
+
+.form {
+  margin-bottom: 0px;
+}
+
+.address-container {
+  overflow: scroll;
+}
+
+.input-container {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: distribute;
+  align-content: space-around;
+}
+
+.location-card-loading {
+  position: relative;
+  width: 320px;
+  height: 190px;
+}
+
+.loading-png {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+}
+
+.loading {
+  position: absolute;
+  top: 21px;
+  right: 50px;
+  bottom: 0px;
+  float: right;
+}
+
+.test {
+  display: block;
+  width: 65%;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: url('../images/Oval 47.svg');
+  background-position: 100% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: left;
+}
+
+.network-error {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  z-index: 100;
+  width: 100%;
+  background-color: #ef303e;
+}
+
+.blank-top {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 20px;
+  background-color: #8e9296;
+}
+
+.blank-card {
+  min-height: 190px;
+  background-color: #d5d5d5;
+}
+
+.window-1 {
+  width: 70px;
+  min-height: 23px;
+  background-color: #eee;
+}
+
+.window-2 {
+  width: 105px;
+  min-height: 15px;
+  margin-top: 15px;
+  margin-left: 20px;
+  background-color: #eee;
+}
+
+.window-3 {
+  width: 134px;
+  min-height: 13px;
+  margin-top: 18px;
+  margin-left: 20px;
+  background-color: #eee;
+}
+
+.window-4 {
+  width: 140px;
+  min-height: 13px;
+  margin-top: 7px;
+  margin-left: 20px;
+  background-color: #eee;
+}
+
+.window-5 {
+  width: 135px;
+  min-height: 16px;
+  margin-top: 17px;
+  margin-left: 20px;
+  background-color: #eee;
+}
+
+.nav {
+  padding-bottom: 0px;
+}
+
+.phone-img {
+  margin-top: 44px;
+}
+
+.location-error-message {
+  margin-top: 20px;
+  font-family: Montserrat, sans-serif;
+  color: #628ecc;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+  }
+  .timeline-wrapper {
+    width: 100%;
+  }
+  .animated-background {
+    width: 100%;
+  }
+  .location-card-loading {
+    width: 100%;
+  }
+  .loading-png {
+    width: 100%;
+    height: 190px;
+  }
+}
+
+@media (max-width: 479px) {
+  .container {
+    margin-top: 0px;
+  }
+  .btn-container {
+    text-decoration: none;
+  }
+}
+

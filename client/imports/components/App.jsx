@@ -1,11 +1,20 @@
 import React from 'react';
+import EventsByLocationContainer from './EventsByLocationContainer';
+import IndexContainer from './IndexContainer';
+import InfoContainer from './InfoContainer';
+import LocationErrorContainer from './LocationErrorContainer';
+import SearchContainer from './SearchContainer';
 
-export default function App() {
-  return (
-    <h1 style={{ color: 'black', background: 'white' }}>
-      React is working!
-      <br />
-      (find me at ./client/imports/components/App.jsx)
-    </h1>
-  );
+export default class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <EventsByLocationContainer/>
+        <IndexContainer/>
+        <InfoContainer/>
+        <LocationErrorContainer/>
+        <SearchContainer/>
+      </div>
+      );
+  }
 }
