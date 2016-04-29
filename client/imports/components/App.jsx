@@ -1,11 +1,19 @@
 import React from 'react';
-import HomePageContainer from './HomePageContainer';
+import EventsByLocationContainer from './EventsByLocationContainer';
+import IndexContainer from './IndexContainer';
+import InfoContainer from './InfoContainer';
+import LocationErrorContainer from './LocationErrorContainer';
+import SearchContainer from './SearchContainer';
 
 export default class App extends React.Component {
   render() {
     return (
       <div>
-        <HomePageContainer/>
+        <EventsByLocationContainer/>
+        <IndexContainer/>
+        <InfoContainer/>
+        <LocationErrorContainer/>
+        <SearchContainer/>
       </div>
       );
   }

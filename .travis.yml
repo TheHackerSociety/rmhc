@@ -1,7 +1,12 @@
 sudo: false
 language: node_js
+node_js:
+  - "5"
 before_install:
   - curl https://install.meteor.com | /bin/sh
   - export PATH="$HOME/.meteor:$PATH"
+  - npm install -g chimp
+before_script:
+  - nohup bash -c "meteor 2>&1 &" && sleep 30; cat nohup.out
 services:
   - mongodb
