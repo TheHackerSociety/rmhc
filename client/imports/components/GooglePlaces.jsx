@@ -3,19 +3,20 @@ import React from 'react';
 class GooglePlaces extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { suggestions: [] };
+    this.state = { predictions: [] };
   }
 
   componentWillReceiveProps(props) {
-    if (!props.input) {
-      this.setState({ suggestions: [] });
+    const { options } = props
+    if (!options.input) {
+      this.setState({ predictions: [] });
       return false;
     }
     const service = new google.maps.places.AutocompleteService();
-    service.getQueryPredictions(
-      { input: props.input },
-      (suggestions = []) => {
-        this.setState({ suggestions });
+    service.getPlacePredictions(
+      options,
+      (predictions = []) => {
+        this.setState({ predictions  });
       }
     );
     return true;
@@ -24,14 +25,13 @@ class GooglePlaces extends React.Component {
   render() {
     const {itemProps, itemComponent, ...other} = this.props
     const ItemComponent = itemComponent;
-    console.log(this.state.suggestions)
 
     return (
       <div {...other}>
         {
-          this.state.suggestions.map((suggestion, index) => {
+          this.state.predictions.map((prediction, index) => {
             return (
-              <ItemComponent key={index} suggestion={suggestion} {...itemProps}/>
+              <ItemComponent key={index} prediction={prediction} {...itemProps}/>
             );
           })
         }
@@ -42,6 +42,7 @@ class GooglePlaces extends React.Component {
 
 export default GooglePlaces;
 GooglePlaces.propTypes = {
+  options: React.PropTypes.object.isRequired,
+  itemProps: React.PropTypes.object.isRequired,
   itemComponent: React.PropTypes.func,
-  itemProps: React.PropTypes.obj,
 };

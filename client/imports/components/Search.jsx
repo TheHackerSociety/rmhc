@@ -1,7 +1,7 @@
 import React from 'react';
 import ParamStore from 'param-store';
 import GooglePlaces from './GooglePlaces.jsx';
-import ItemComponent from  './ItemComponent.jsx';
+import ItemComponent from './ItemComponent.jsx';
 
 export default class Search extends React.Component {
   constructor(props) {
@@ -40,7 +40,7 @@ export default class Search extends React.Component {
               </div>
           }
           <GooglePlaces
-            input={this.state.query}
+            options={{ input: this.state.query }}
             itemProps={{ onClick: this.props.setAddress.bind(this) }}
             itemComponent={ItemComponent}
           />

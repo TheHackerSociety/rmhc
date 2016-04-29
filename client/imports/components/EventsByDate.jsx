@@ -109,8 +109,6 @@ export default class EventsByDate extends React.Component {
 
 }
 
-export default EventsByDate;
-
 export default createContainer(() => {
   return {
     events: Events.find().fetch(),

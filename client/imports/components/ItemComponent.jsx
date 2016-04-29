@@ -11,16 +11,16 @@ class ItemComponent extends React.Component {
   }
 
   render() {
-    const {suggestion} = this.props;
+    const {prediction} = this.props;
 
-    if (suggestion) {
+    if (prediction) {
         return (
           <div className="address-container">
             <div className="input-container">
               <a href='#' className="w-inline-block address-option"
                 onClick={this.setAddress.bind(this)}
               >
-              {suggestion.description}
+              {prediction.description}
               </a>
             </div>
           </div>
@@ -32,6 +32,6 @@ class ItemComponent extends React.Component {
 
 export default ItemComponent;
 ItemComponent.propTypes = {
-  itemProps: React.PropTypes.obj,
-  suggestion: React.PropTypes.obj,
+  itemProps: React.PropTypes.object,
+  suggestion: React.PropTypes.object,
 };
