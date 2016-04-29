@@ -1,6 +1,6 @@
 import React from 'react';
 import ParamStore from 'param-store';
-import GooglePlaces from './GooglePlaces.jsx';
+import GooglePlaces from 'react-google-places-component';
 import ItemComponent from './ItemComponent.jsx';
 
 export default class Search extends React.Component {
