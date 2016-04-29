@@ -29,6 +29,7 @@ Create a basic app for viewing the RMCM Unit's schedule by location and date.
 4. EventsByDate
   - Retrieve events from db.
   - Sort events by date.
+
 5. EventsByLocation
   - Retrieve events from db.
   - Sort Events By distance. Check [Google's Distance Matrix Service API](https://developers.google.com/maps/documentation/javascript/distancematrix#distance_matrix) for computing distances.
