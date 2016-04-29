@@ -20,17 +20,19 @@ Create a basic app for viewing the RMCM Unit's schedule by location and date.
   * Search.
   * EventsByDate.
   * EventsByLocation.
-  2.1. Read Meteor Docs about [Publications and Subscriptions](http://docs.meteor.com/#/full/meteor_publish)
-  2.2. Read Meteor docs for using [Meteor’s data system](http://guide.meteor.com/react.html#data)
 
-3. Search component
+3. Read the following docs:
+  * Read Meteor Docs about [Publications and Subscriptions](http://docs.meteor.com/#/full/meteor_publish)
+  * Read Meteor docs for using [Meteor’s data system](http://guide.meteor.com/react.html#data)
+
+4. Search component
   - Use [GooglePlaces](https://github.com/poetic/react-google-places-component) component.
 
-4. EventsByDate
+5. EventsByDate component
   - Retrieve events from db.
   - Sort events by date.
 
-5. EventsByLocation
+6. EventsByLocation component
   - Retrieve events from db.
   - Sort Events By distance. Check [Google's Distance Matrix Service API](https://developers.google.com/maps/documentation/javascript/distancematrix#distance_matrix) for computing distances.
   - Group Events by distance. Check [lodash's groupBy](https://lodash.com/docs#groupBy)
