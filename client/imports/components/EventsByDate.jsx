@@ -3,7 +3,7 @@ import { Link } from 'param-store';
 import EventItem from './EventItem';
 import EventIloading from './EventIloading';
 
-export default class EventsByLocation extends React.Component {
+export default class EventsByDate extends React.Component {
   render() {
     return (
       <div className="body-color">

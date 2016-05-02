@@ -1,5 +1,5 @@
 import React from 'react';
-import ParamStore from 'param-store';
+import { Link } from 'param-store';
 
 export default class Search extends React.Component {
   render() {
@@ -7,11 +7,8 @@ export default class Search extends React.Component {
       <div className="body-color">
         <div className="container">
           <nav>
-            <a href="index.html" className="nav-text cancel" onClick={e => {
-                                                                        ParamStore.set({
-                                                                          path: 'index'
-                                                                        });e.preventDefault();
-                                                                      }}>Cancel</a>
+            <Link href="index.html" className="nav-text cancel" params={{  path: 'index'}}> Cancel
+            </Link>
           </nav>
           <div className="address-container">
             <div className="input-container">

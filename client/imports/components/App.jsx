@@ -1,4 +1,5 @@
 import React from 'react';
+import EventsByDateContainer from './EventsByDateContainer';
 import EventsByLocationContainer from './EventsByLocationContainer';
 import IndexContainer from './IndexContainer';
 import InfoContainer from './InfoContainer';
@@ -9,6 +10,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
+        <EventsByDateContainer/>
         <EventsByLocationContainer/>
         <IndexContainer/>
         <InfoContainer/>

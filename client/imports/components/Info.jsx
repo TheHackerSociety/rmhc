@@ -1,5 +1,5 @@
 import React from 'react';
-import ParamStore from 'param-store';
+import { Link } from 'param-store';
 
 export default class Info extends React.Component {
   render() {
@@ -7,11 +7,9 @@ export default class Info extends React.Component {
       <div className="body-color">
         <div className="container">
           <nav className="nav-padding">
-            <img src="images/triangle-icon.svg" className="back-arrow" /><a href="index.html" className="nav-text" onClick={e => {
-                                                                                                                              ParamStore.set({
-                                                                                                                                path: 'index'
-                                                                                                                              });e.preventDefault();
-                                                                                                                            }}>Back</a>
+            <img src="images/triangle-icon.svg" className="back-arrow" />
+            <Link href="index.html" className="nav-text" params={{  path: 'index'}}> Back
+            </Link>
           </nav>
           <section className="details-section">
             <p className="service-paragraph">
