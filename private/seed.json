@@ -1,0 +1,74 @@
+[
+  {
+    "place": "N. Channelview WIC",
+    "address": {
+      "street": "13457 E Frwy Service Rd",
+      "zip": "Houston Tx 77015"
+    },
+    "date": "2016-05-11",
+    "morningStartTime": "9:00am",
+    "morningEndTime": "11:30am",
+    "noonStartTime": "1:00pm",
+    "noonEndTime": "2:00pm"
+  },
+  {
+    "place": "Bonner Elementary",
+    "address": {
+      "street": "8100 Elrod",
+      "zip": "Houston Tx 77017"
+    },
+    "date": "2016-05-12",
+    "morningStartTime": "9:00am",
+    "morningEndTime": "11:30am",
+    "noonStartTime": "1:00pm",
+    "noonEndTime": "2:00pm"
+  },
+  {
+    "place": "Cornelius Elementary",
+    "address": {
+      "street": "7475 Westover",
+      "zip": "Houston Tx 77087"
+    },
+    "date": "2016-05-16",
+    "morningStartTime": "9:00am",
+    "morningEndTime": "11:30am",
+    "noonStartTime": "1:00pm",
+    "noonEndTime": "2:00pm"
+  },
+  {
+    "place": "Park Place Elementary",
+    "address": {
+      "street": "8235 Park Place Blvd.",
+      "zip": "Houston Tx 77017"
+    },
+    "date": "2016-05-17",
+    "morningStartTime": "9:00am",
+    "morningEndTime": "11:30am",
+    "noonStartTime": "1:00pm",
+    "noonEndTime": "2:00pm"
+  },
+  {
+    "place": "Golfcrest Elementary",
+    "address": {
+      "street": "7414 Fairway",
+      "zip": "Houston Tx 77087"
+    },
+    "date": "2016-05-03",
+    "morningStartTime": "9:00am",
+    "morningEndTime": "11:30am",
+    "noonStartTime": "1:00pm",
+    "noonEndTime": "2:00pm"
+  },
+  {
+    "place": "RP Harris Elementary",
+    "address": {
+      "street": "1262 Mae Dr.",
+      "zip": "Houston Tx 77015"
+    },
+    "date": "2016-05-19",
+    "morningStartTime": "9:00am",
+    "morningEndTime": "11:30am",
+    "noonStartTime": "1:00pm",
+    "noonEndTime": "2:00pm"
+  }
+]
