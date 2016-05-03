@@ -18,3 +18,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 static-html
 react-meteor-data
+aldeed:simple-schema
+aldeed:collection2
+accounts-base
+accounts-password
