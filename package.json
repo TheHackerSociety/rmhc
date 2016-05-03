@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "lodash": "^4.10.0",
-    "lodash.groupby": "^4.3.0",
     "meteor-node-stubs": "~0.2.0",
     "param-store": "poetic/param-store",
     "react": "^15.0.1",
+    "react-addons-pure-render-mixin": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-google-places-component": "0.0.4"
   },
