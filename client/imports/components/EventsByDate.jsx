@@ -117,5 +117,6 @@ export default createContainer(() => {
 
 EventsByDate.propTypes = {
   events: React.PropTypes.array,
+
 };
 
