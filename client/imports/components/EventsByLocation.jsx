@@ -7,6 +7,7 @@ export default class EventsByLocation extends React.Component {
     super(props);
     console.log();
     this.state = {
+
       loading: true,
       dists: null,
       groupedArray: null,
