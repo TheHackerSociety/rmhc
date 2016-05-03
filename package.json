@@ -15,7 +15,6 @@
     "param-store": "poetic/param-store",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
-    "react-geosuggest": "file:../../projects/react-geosuggest",
     "react-google-places-component": "0.0.4"
   },
   "devDependencies": {
