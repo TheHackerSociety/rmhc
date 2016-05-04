@@ -29,7 +29,7 @@ export default class EventsByDate extends React.Component {
           </section>
           <section>
             <div className="location-top-info">
-              <div className="test">
+              <div className="loading-message">
                 Fetching locations
               </div>
             </div>

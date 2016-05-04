@@ -1,62 +1,58 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
 
 export default class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: null,
-      password: null,
-    };
-  }
-
-  setUsername(e) {
-    const username = e.target.value;
-    this.setState({ username });
-  }
-
-  setPassword(e) {
-    const password = e.target.value;
-    this.setState({ password });
-  }
-
-  //checkEnter(e) {
-      //console.log('login')
-    //if (e.key === 'Enter' && this.state.username && this.state.password) {
-      ////this.loginUser();
-    //}
-  //}
-
-  loginUser() {
-    const username = this.state.username;
-    const password = this.state.password;
-
-    console.log(this.state.username, this.state.password);
-    Meteor.loginWithPassword(username, password, (err, success) => {
-      if (!err) {
-        this.props.setUser()
-      }
-    });
-  }
-
   render() {
     return (
       <div>
-        <br />
-        username:
-        <input
-          onBlur={this.setUsername.bind(this)}
-        />
-        <br />
-        <br />
-        password:
-        <input
-          onBlur={this.setPassword.bind(this)}
-        />
-        <br />
-        <br />
-        <button onClick={this.loginUser.bind(this)}>LOGIN</button>
+        <section className="login-container">
+          <img alt="Ronald McDonald House Charities logo"
+            width="178"
+            src="images/rmhc-logo.png"
+            className="center" /><img alt="Ronald McDonald Care Mobile "
+                                                                                                                        width="280"
+                                                                                                                        src="images/care-mobile-logo.png"
+                                                                                                                        className="center care-mobile-logo" />
+          <div className="w-form">
+            <form id="email-form" name="email-form" data-name="Email Form">
+              <label htmlFor="UserName">
+                User Name:
+              </label>
+              <input id="UserName"
+                type="email"
+                placeholder="Enter your User Name"
+                name="UserName"
+                data-name="UserName"
+                required="required"
+                className="w-input" />
+              <label htmlFor="Password">
+                Password:
+              </label>
+              <input id="Password"
+                type="text"
+                placeholder="Enter your Password"
+                name="Password"
+                data-name="Password"
+                required="required"
+                className="w-input" />
+              <input type="submit"
+                value="Submit"
+                data-wait="Please wait..."
+                className="w-button btn primary-btn-color full-btn" />
+            </form>
+            <div className="w-form-done">
+              <p>
+                Thank you! Your submission has been received!
+              </p>
+            </div>
+            <div className="w-form-fail">
+              <p>
+                Oops! Something went wrong while submitting the form
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
-    );
+      );
   }
 }
+;

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Wed May 04 2016 14:33:52 GMT+0000 (UTC) -->
-<html data-wf-site="570e731a22afb3312d41211d" data-wf-page="570e731a22afb3312d41211e">
+<!-- Last Published: Wed May 04 2016 14:33:53 GMT+0000 (UTC) -->
+<html data-wf-site="570e731a22afb3312d41211d" data-wf-page="57281b7b737e288d30efc4f0">
 <head>
   <meta charset="utf-8">
-  <title>home</title>
+  <title>login</title>
+  <meta property="og:title" content="login">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
@@ -64,23 +65,24 @@
     }
   </style>
 </head>
-<body class="body-color">
-  <div class="container">
-    <nav class="w-clearfix">
-      <a href="info.html" class="w-inline-block w-clearfix info-icon"><img alt="information icon" src="images/information-icon.svg">
-      </a>
-    </nav><img alt="Ronald McDonald House Charities logo" width="178" src="images/rmhc-logo.png" class="center"><img alt="Ronald McDonald Care Mobile " width="280" src="images/care-mobile-logo.png" class="center care-mobile-logo">
-    <div class="w-clearfix btn-wrapper">
-      <a href="search.html" class="w-inline-block btn-container primary-btn-color"><img alt="Find by location bus icon" src="images/location-bus.svg" class="center">
-        <div class="btn-text">Find by
-          <br> location</div>
-      </a>
-      <a href="events-by-date.html" class="w-inline-block btn-container secondary-btn-color"><img alt="Find by location date icon" src="images/location-bus.svg" class="center">
-        <div class="btn-text">Find by
-          <br>date</div>
-      </a>
+<body>
+  <section class="login-container"><img alt="Ronald McDonald House Charities logo" width="178" src="images/rmhc-logo.png" class="center"><img alt="Ronald McDonald Care Mobile " width="280" src="images/care-mobile-logo.png" class="center care-mobile-logo">
+    <div class="w-form">
+      <form id="email-form" name="email-form" data-name="Email Form">
+        <label for="UserName">User Name:</label>
+        <input id="UserName" type="email" placeholder="Enter your User Name" name="UserName" data-name="UserName" required="required" class="w-input">
+        <label for="Password">Password:</label>
+        <input id="Password" type="text" placeholder="Enter your Password" name="Password" data-name="Password" required="required" class="w-input">
+        <input type="submit" value="Submit" data-wait="Please wait..." class="w-button btn primary-btn-color full-btn">
+      </form>
+      <div class="w-form-done">
+        <p>Thank you! Your submission has been received!</p>
+      </div>
+      <div class="w-form-fail">
+        <p>Oops! Something went wrong while submitting the form</p>
+      </div>
     </div>
-  </div>
+  </section>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script type="text/javascript" src="js/webflow.js"></script>
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->

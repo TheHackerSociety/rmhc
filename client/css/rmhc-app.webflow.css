@@ -29,6 +29,10 @@ li {
   text-decoration: none;
 }
 
+.btn.primary-btn-color.full-btn {
+  width: 100%;
+}
+
 .primary-btn-color {
   background-color: #ffc829;
 }
@@ -315,6 +319,10 @@ li {
 }
 
 .input-container {
+  width: 10%;
+  margin-right: 4%;
+  margin-bottom: 2%;
+  float: left;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -333,6 +341,21 @@ li {
   -webkit-align-content: space-around;
   -ms-flex-line-pack: distribute;
   align-content: space-around;
+}
+
+.input-container.location {
+  width: 48%;
+  margin-right: 2%;
+}
+
+.input-container.address {
+  width: 48%;
+  margin-right: 0%;
+  margin-left: 2%;
+}
+
+.input-container.date {
+  width: 12%;
 }
 
 .location-card-loading {
@@ -356,7 +379,7 @@ li {
   float: right;
 }
 
-.test {
+.loading-message {
   display: block;
   width: 65%;
   margin-right: auto;
@@ -443,6 +466,81 @@ li {
   font-size: 18px;
   font-weight: 400;
   text-align: center;
+}
+
+.place {
+  width: 30%;
+}
+
+.text-field {
+  float: left;
+}
+
+.text-field.location {
+  width: 30%;
+}
+
+.text-field.address {
+  width: 30%;
+}
+
+.text-field.start {
+  width: 60%;
+}
+
+.text-field.end {
+  width: 60%;
+}
+
+.select-field {
+  width: 40%;
+  float: left;
+}
+
+.submit {
+  width: 22%;
+  margin-top: 25px;
+  float: left;
+}
+
+.submit.btn.primary-btn-color.small {
+  width: 10%;
+}
+
+.submit.btn.primary-btn-color.delete {
+  width: 10%;
+  margin-right: 2%;
+  background-color: #ef303e;
+  color: #fff;
+}
+
+.admin-container {
+  display: block;
+  width: 90%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 40px;
+}
+
+.main-form {
+  margin-bottom: 150px;
+}
+
+.form-wrapper {
+  margin-bottom: 60px;
+}
+
+.login-container {
+  display: block;
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 40px;
+}
+
+.password {
+  margin-bottom: 20px;
 }
 
 @media (max-width: 767px) {

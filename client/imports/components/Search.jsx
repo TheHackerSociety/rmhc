@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'param-store';
+import PlaceItem from './PlaceItem';
 
 export default class Search extends React.Component {
   render() {
@@ -11,20 +12,10 @@ export default class Search extends React.Component {
             </Link>
           </nav>
           <div className="address-container">
-            <div className="input-container">
-              <a href="#" className="w-inline-block address-option">
-                <div> 675 Bering St. Houston TX, USA </div>
-              </a>
-            </div>
-            <div className="input-container">
-              <a href="#" className="w-inline-block address-option">
-                <div> 675 Bering St. Houston TX, USA </div>
-              </a>
-            </div>
-            <div className="input-container">
-              <a href="#" className="w-inline-block address-option">
-                <div> 675 Bering St. Houston TX, USA </div>
-              </a>
+            <div className="dates-container">
+              <PlaceItem></PlaceItem>
+              <PlaceItem></PlaceItem>
+              <PlaceItem></PlaceItem>
             </div>
           </div>
           <div className="w-form address-input">

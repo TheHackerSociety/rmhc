@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'param-store';
 import EventItem from './EventItem';
-import EventIloading from './EventIloading';
+import EventItemLoading from './EventItemLoading';
 
 export default class EventsByLocation extends React.Component {
   render() {
@@ -29,12 +29,12 @@ export default class EventsByLocation extends React.Component {
           </section>
           <section>
             <div className="location-top-info">
-              <div className="test">
+              <div className="loading-message">
                 Fetching locations
               </div>
             </div>
           </section>
-          <EventIloading></EventIloading>
+          <EventItemLoading></EventItemLoading>
         </div>
       </div>
       );
