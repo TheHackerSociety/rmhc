@@ -36,8 +36,11 @@ export default class EventsByLocation extends React.Component {
   getDistance() {
     const origin = [this.props.origin.origin];
     const destinations = this.props.events.map((event) => {
-      return event.address.street+event.address.zip;
+      console.log(event);
+      return event.address.street+" "+event.address.zip;
     });
+
+    console.log(destinations);
 
     this.getGoogleDistance(origin, destinations, (response, status) => {
       if (status === google.maps.DistanceMatrixStatus.OK) {
