@@ -114,6 +114,7 @@ export default class EventsByLocation extends React.Component {
               Back
             </a>
           </nav>
+          <div>
           {
             this.state.groupedArray.map((array, index) => {
               return (
@@ -123,6 +124,7 @@ export default class EventsByLocation extends React.Component {
                       {this.state.milesGroups[index]}
                     </div>
                   </div>
+                  <div>
                   {array.map((event, index) => {
                     return (
                       <div key={index + 3} className="location-card">
@@ -170,10 +172,12 @@ export default class EventsByLocation extends React.Component {
                       </div>
                     );
                   })}
+                  </div>
                 </section>
               );
             })
           }
+        </div>
         </div>
       </div>
       );

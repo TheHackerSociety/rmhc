@@ -48,7 +48,7 @@ export default class EventsByDate extends React.Component {
     return (
       <div className="body-color">
         <div className="container">
-          <nav>
+          <nav style={{ height: '100px' }}>
             <img src="images/triangle-icon.svg"
               className="back-arrow"
             />
@@ -61,47 +61,49 @@ export default class EventsByDate extends React.Component {
               Back
             </a>
           </nav>
-          {this.state.newEvents.map((event, index) => {
-            return (
-              <div key={index} className="location-card">
-                <div className="w-clearfix location-card-header">
-                  <div className="w-clearfix date-container">
-                    <div className="secondary-font-color day">
-                        {this.state.weekdays[event.date.getDay()]}
-                        <br />
-                        {this.state.months[event.date.getMonth()]}
+          <section>
+            {this.state.newEvents.map((event, index) => {
+              return (
+                <div key={index} className="location-card">
+                  <div className="w-clearfix location-card-header">
+                    <div className="w-clearfix date-container">
+                      <div className="secondary-font-color day">
+                          {this.state.weekdays[event.date.getDay()]}
+                          <br />
+                          {this.state.months[event.date.getMonth()]}
+                      </div>
+                      <div className="secondary-font-color day-number">
+                        {event.date.getDate()}
+                      </div>
                     </div>
-                    <div className="secondary-font-color day-number">
-                      {event.date.getDate()}
+                  </div>
+                  <div className="w-clearfix card-info">
+                    <a href={`https://www.google.com/maps/place/${event.address.street} ${event.address.zip}/`}
+                      target="_blank"
+                      className="w-inline-block w-clearfix location-icon"
+                    >
+                      <img alt="location icon"
+                        src="images/location-icon.svg"
+                      />
+                    </a>
+                    <div className="secondary-font-color location-name">
+                      {event.place}
+                    </div>
+                    <div className="secondary-font-color location-address">
+                      {event.address.street}
+                      <br />
+                      {event.address.zip}
+                    </div>
+                    <div className="secondary-font-color location-time">
+                      {event.morningStartTime}-{event.morningEndTime}
+                      <br />
+                      {event.noonStartTime}-{event.noonEndTime}
                     </div>
                   </div>
                 </div>
-                <div className="w-clearfix card-info">
-                  <a href={`https://www.google.com/maps/place/${event.address.street} ${event.address.zip}/`}
-                    target="_blank"
-                    className="w-inline-block w-clearfix location-icon"
-                  >
-                    <img alt="location icon"
-                      src="images/location-icon.svg"
-                    />
-                  </a>
-                  <div className="secondary-font-color location-name">
-                    {event.place}
-                  </div>
-                  <div className="secondary-font-color location-address">
-                    {event.address.street}
-                    <br />
-                    {event.address.zip}
-                  </div>
-                  <div className="secondary-font-color location-time">
-                    {event.morningStartTime}-{event.morningEndTime}
-                    <br />
-                    {event.noonStartTime}-{event.noonEndTime}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </section>
         </div>
       </div>
     );
