@@ -39,7 +39,6 @@ export default class EventsByLocation extends React.Component {
       console.log(event);
       return event.address.street+" "+event.address.zip;
     });
-
     console.log(destinations);
 
     this.getGoogleDistance(origin, destinations, (response, status) => {
