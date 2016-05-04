@@ -1,7 +1,33 @@
 import React from 'react';
 import EventDetailsItem from './EventDetailsItem';
+import GooglePlaces from 'react-google-places-component';
+import PlaceItem from './PlaceItem';
 
 export default class Admin extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      place: null,
+      query: " ",
+    };
+  }
+
+  setPlace(e) {
+    const place = e.target.value;
+    this.setState({ place });
+  }
+
+  setQuery(e) {
+    const query = e.target.value;
+    this.setState({ query });
+  }
+
+
+  setAddress(address) {
+    console.log(address);
+
+  }
+
   render() {
     return (
       <div>
@@ -9,10 +35,12 @@ export default class Admin extends React.Component {
           <img alt="Ronald McDonald House Charities logo"
             width="178"
             src="images/rmhc-logo.png"
-            className="center" /><img alt="Ronald McDonald Care Mobile "
-                                                                                                                        width="280"
-                                                                                                                        src="images/care-mobile-logo.png"
-                                                                                                                        className="center care-mobile-logo" />
+            className="center" />
+          <img alt="Ronald McDonald Care Mobile "
+            width="280"
+            src="images/care-mobile-logo.png"
+            className="center care-mobile-logo"
+          />
           <div className="w-form">
             <form id="email-form"
               name="email-form"
@@ -23,24 +51,33 @@ export default class Admin extends React.Component {
                   Location Name:
                 </label>
                 <input id="name"
+                  onBlur={this.setPlace.bind(this)}
                   type="text"
                   placeholder="Enter location"
                   name="name"
                   data-name="Name"
                   required="required"
-                  className="w-input" />
+                  className="w-input"
+                />
               </div>
               <div className="input-container address">
                 <label htmlFor="name-2">
                   Address:
                 </label>
                 <input id="name-2"
+                  onChange={this.setQuery.bind(this)}
                   type="text"
                   placeholder="Enter address"
                   name="name-2"
                   data-name="Name 2"
                   required="required"
-                  className="w-input" />
+                  className="w-input"
+                />
+               <GooglePlaces
+                 options={{ input: this.state.query }}
+                 itemProps={{ onClick: this.setAddress.bind(this) }}
+                 itemComponent={PlaceItem}
+               />
               </div>
               <div className="input-container">
                 <label htmlFor="name-5">
@@ -167,29 +204,6 @@ export default class Admin extends React.Component {
           </div>
           <div className="w-form form-wrapper">
             <EventDetailsItem></EventDetailsItem>
-            <div className="w-form-done">
-              <p>
-                Thank you! Your submission has been received!
-              </p>
-            </div>
-            <div className="w-form-fail">
-              <p>
-                Oops! Something went wrong while submitting the form
-              </p>
-            </div>
-          </div>
-          <div className="w-form form-wrapper">
-            <EventDetailsItem></EventDetailsItem>
-            <div className="w-form-done">
-              <p>
-                Thank you! Your submission has been received!
-              </p>
-            </div>
-            <div className="w-form-fail">
-              <p>
-                Oops! Something went wrong while submitting the form
-              </p>
-            </div>
           </div>
         </section>
       </div>
