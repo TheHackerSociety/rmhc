@@ -6,13 +6,14 @@ Events.attachSchema(new SimpleSchema({
   },
   address: {
     type: Object,
+    blackbox: true
   },
-    "address.$.street": {
-      type: String,
-    },
-    "address.$.zip": {
-      type: String,
-    },
+  "address.$.street": {
+    type: String,
+  },
+  "address.$.zip": {
+    type: String,
+  },
   date: {
     type: Date,
   },
