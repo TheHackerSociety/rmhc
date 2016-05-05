@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'param-store';
 import EventItemLocation from './EventItemLocation';
+import EventItemLoading from './EventItemLoading.jsx';
 import { createContainer } from 'meteor/react-meteor-data';
 
 export default class EventsByLocation extends React.Component {
@@ -95,7 +96,19 @@ export default class EventsByLocation extends React.Component {
   render() {
     if (this.state.loading) {
       return (
-        <div>Loading</div>
+        <div>
+          <section>
+            <div className="location-top-info">
+              <div className="loading-message">
+                Fetching locations
+              </div>
+              <EventItemLoading />
+              <EventItemLoading />
+              <EventItemLoading />
+              <EventItemLoading />
+            </div>
+          </section>
+        </div>
       );
     }
     return (

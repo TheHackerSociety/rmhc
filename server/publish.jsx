@@ -1,3 +1,4 @@
 Meteor.publish('events', () => {
-  return Events.find();
+  const todayDate = new Date();
+  return Events.find({date: {$gt: todayDate }});
 });

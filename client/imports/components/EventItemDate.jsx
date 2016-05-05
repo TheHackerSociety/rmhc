@@ -9,6 +9,7 @@ export default class EventItemDate extends React.Component {
     };
   }
 
+
   openWindow() {
     window.open(`https://www.google.com/maps/place/${this.props.event.address.street} ${this.props.event.address.zip}/`, "_system")
   }
