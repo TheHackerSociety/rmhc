@@ -37,6 +37,11 @@ export default class Search extends React.Component {
             data-name="Address 2"
             className="w-input input"
           />
+          {
+            this.state.query ?
+              null :
+                  <div className="address-prompt">Type your address or zip</div>
+          }
           <div className="address-container">
             <div className="dates-container">
               <GooglePlaces
@@ -51,4 +56,3 @@ export default class Search extends React.Component {
       );
   }
 }
-;

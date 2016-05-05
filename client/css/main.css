@@ -1,5 +1,9 @@
 
-    ::-webkit-input-placeholder {
+    input {    
+      background-clip: padding-box;
+      border-radius: none;
+    }
+      ::-webkit-input-placeholder {
        color: red;
     }
     :-moz-placeholder { /* Firefox 18- */

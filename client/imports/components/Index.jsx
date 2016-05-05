@@ -26,7 +26,7 @@ export default class Index extends React.Component {
             </div>
             </Link>
             <Link href="events-by-date.html" className="w-inline-block btn-container secondary-btn-color" params={{  path: 'events-by-date'}}>
-            <img alt="Find by location date icon" src="images/location-bus.svg" className="center" />
+            <img alt="Find by location date icon" src="images/date-bus.svg" className="center" />
             <div className="btn-text">
               Find by
               <br />date

@@ -86,6 +86,10 @@ li {
   text-decoration: none;
 }
 
+.btn-container.secondary-btn-color {
+  padding-top: 29px;
+}
+
 .btn-text {
   font-family: Montserrat, sans-serif;
   color: #000;
@@ -106,6 +110,7 @@ li {
   margin-top: 10px;
   font-family: 'Open Sans', sans-serif;
   color: #628ecc;
+  font-size: 20px;
   text-decoration: none;
 }
 
@@ -296,6 +301,7 @@ li {
 }
 
 .address-container {
+  display: block;
   overflow: scroll;
 }
 
@@ -360,6 +366,7 @@ li {
   top: 0px;
   right: 0px;
   z-index: 100;
+  display: block;
   width: 100%;
   background-color: #ef303e;
 }
@@ -415,7 +422,7 @@ li {
 }
 
 .nav.events-nav {
-  min-height: 100px;
+  min-height: 50px;
 }
 
 .phone-img {

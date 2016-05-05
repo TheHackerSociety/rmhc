@@ -86,6 +86,10 @@ li {
   text-decoration: none;
 }
 
+.btn-container.secondary-btn-color {
+  padding-top: 29px;
+}
+
 .btn-text {
   font-family: Montserrat, sans-serif;
   color: #000;
@@ -105,8 +109,8 @@ li {
   display: inline-block;
   margin-top: 10px;
   font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
   color: #628ecc;
+  font-size: 20px;
   text-decoration: none;
 }
 
@@ -122,6 +126,7 @@ li {
 .input {
   min-height: 50px;
   margin-bottom: 0px;
+  border-radius: 0px;
 }
 
 .address-icon {
@@ -297,6 +302,7 @@ li {
 }
 
 .address-container {
+  display: block;
   overflow: scroll;
 }
 
@@ -361,6 +367,7 @@ li {
   top: 0px;
   right: 0px;
   z-index: 100;
+  display: block;
   width: 100%;
   background-color: #ef303e;
 }
