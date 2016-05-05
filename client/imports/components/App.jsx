@@ -1,13 +1,16 @@
 import React from 'react';
-import EventsByLocationContainer from './EventsByLocationContainer';
+import AdminContainer from './AdminContainer';
 import EventsByDateContainer from './EventsByDateContainer';
+import EventsByLocationContainer from './EventsByLocationContainer';
 import IndexContainer from './IndexContainer';
 import InfoContainer from './InfoContainer';
+import LocationErrorContainer from './LocationErrorContainer';
+import LoginContainer from './LoginContainer';
 import SearchContainer from './SearchContainer';
 import ParamStore from 'param-store';
 
 export default class App extends React.Component {
-  constructor(props) {
+ constructor(props) {
     super(props);
     console.log();
     this.state = {
@@ -23,15 +26,14 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <EventsByLocationContainer
-          origin={this.state.address}
-        />
-        <EventsByDateContainer />
-        <IndexContainer />
-        <InfoContainer />
-        <SearchContainer
-          setAddress={this.setAddress.bind(this)}
-        />
+        <AdminContainer/>
+        <EventsByDateContainer/>
+        <EventsByLocationContainer origin={this.state.address}/>
+        <IndexContainer/>
+        <InfoContainer/>
+        <LocationErrorContainer />
+        <LoginContainer/>
+        <SearchContainer setAddress={this.setAddress.bind(this)}/>
       </div>
       );
   }

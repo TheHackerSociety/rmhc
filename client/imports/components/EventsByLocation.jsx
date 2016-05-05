@@ -1,5 +1,6 @@
 import React from 'react';
-import ParamStore from 'param-store';
+import { Link } from 'param-store';
+import EventItemLocation from './EventItemLocation';
 import { createContainer } from 'meteor/react-meteor-data';
 
 export default class EventsByLocation extends React.Component {
@@ -73,7 +74,6 @@ export default class EventsByLocation extends React.Component {
       return 30;
     });
 
-
     const groupedArray = [];
     const milesGroups = [];
 
@@ -101,89 +101,41 @@ export default class EventsByLocation extends React.Component {
     return (
       <div className="body-color">
         <div className="container">
-          <nav>
-            <img src="images/triangle-icon.svg"
-              className="back-arrow"
-            />
-            <a href="search.html" className="nav-text"
-              onClick={e => {
-                ParamStore.set({ path: 'search' });
-                e.preventDefault();
-              }}
-            >
-              Back
-            </a>
+          <nav className="nav events-nav">
+            <img src="images/triangle-icon.svg" className="back-arrow" />
+            <Link href="search.html" className="nav-text" params={{  path: 'search'}}> Back
+            </Link>
           </nav>
           <div>
-          {
-            this.state.groupedArray.map((array, index) => {
-              return (
-                <section key={index}>
-                  <div className="location-top-info">
-                    <div>
+            {
+              this.state.groupedArray.map((array, index) => {
+                return (
+                  <section key={index}>
+                    <div className="location-top-info">
+                      <div>
                       {this.state.milesGroups[index]}
-                    </div>
-                  </div>
-                  <div>
-                  {array.map((event, index) => {
-                    return (
-                      <div key={index + 3} className="location-card">
-                        <div className="w-clearfix location-card-header">
-                          <div className="w-clearfix miles-container">
-                            <div className="miles-number">
-                              {(event.distance / 1609.344).toFixed(2)}
-                            </div>
-                            <div className="miles-text">
-                              MILES
-                              <br />AWAY
-                            </div>
-                          </div>
-                          <div className="w-clearfix date-container">
-                            <div className="secondary-font-color day">
-                              {this.state.weekdays[event.date.getDay()]}
-                              <br />{this.state.months[event.date.getMonth()]}
-                            </div>
-                            <div className="secondary-font-color day-number">
-                              {event.date.getDate()}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="w-clearfix card-info">
-                          <a href={`https://www.google.com/maps/place/${event.address.street} ${event.address.zip}/`}
-                            target="_blank"
-                            className="w-inline-block w-clearfix location-icon"
-                          >
-                            <img alt="location icon" src="images/location-icon.svg" />
-                          </a>
-                          <div className="secondary-font-color location-name">
-                            {event.place}
-                          </div>
-                          <div className="secondary-font-color location-address">
-                            {event.address.street}
-                            <br />
-                            {event.address.zip}
-                          </div>
-                          <div className="secondary-font-color location-time">
-                            {event.morningStartTime}-{event.morningEndTime}
-                            <br />
-                            {event.noonStartTime}-{event.noonEndTime}
-                          </div>
-                        </div>
                       </div>
-                    );
-                  })}
-                  </div>
-                </section>
-              );
-            })
-          }
-        </div>
+                    </div>
+                      {
+                        array.map((event, index) => {
+                          return(
+                            <EventItemLocation
+                              key={index + 3}
+                              event={event}
+                            />
+                          )
+                        })
+                      }
+                  </section>
+                );
+              })
+            }
+          </div>
         </div>
       </div>
-      );
+    );
   }
 }
-export default EventsByLocation;
 
 export default createContainer((address) => {
   const origin = address;

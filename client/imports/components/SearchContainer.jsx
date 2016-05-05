@@ -9,7 +9,7 @@ class SearchContainer extends React.Component {
       return null;
     }
 
-    return <Search setAddress={this.props.setAddress.bind(this)} />;
+    return <Search setAddress={this.props.setAddress.bind(this)}/>;
   }
 }
 

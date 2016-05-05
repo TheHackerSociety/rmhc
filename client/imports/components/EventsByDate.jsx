@@ -1,17 +1,14 @@
 import React from 'react';
-import ParamStore from 'param-store';
+import { Link } from 'param-store';
+import EventItemDate from './EventItemDate';
 import { createContainer } from 'meteor/react-meteor-data';
-
 
 export default class EventsByDate extends React.Component {
   constructor(props) {
     super(props);
-    console.log();
     this.state = {
       loading: true,
       newEvents: null,
-      weekdays: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
-      months: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
     };
   }
 
@@ -40,75 +37,35 @@ export default class EventsByDate extends React.Component {
     if (this.state.loading) {
       return (
         <div>
-          Loading
+          <section>
+            <div className="location-top-info">
+              <div className="loading-message">
+                Fetching locations
+              </div>
+            </div>
+          </section>
         </div>
       );
     }
-
     return (
       <div className="body-color">
         <div className="container">
-          <nav style={{ height: '100px' }}>
-            <img src="images/triangle-icon.svg"
-              className="back-arrow"
-            />
-            <a href="index.html" className="nav-text"
-              onClick={e => {
-                ParamStore.set({ path: 'index' });
-                e.preventDefault();
-              }}
-            >
-              Back
-            </a>
+          <nav className="nav events-nav">
+            <img src="images/triangle-icon.svg" className="back-arrow" />
+            <Link href="search.html" className="nav-text" params={{ path: 'index' }}> Back
+            </Link>
           </nav>
-          <section>
-            {this.state.newEvents.map((event, index) => {
-              return (
-                <div key={index} className="location-card">
-                  <div className="w-clearfix location-card-header">
-                    <div className="w-clearfix date-container">
-                      <div className="secondary-font-color day">
-                          {this.state.weekdays[event.date.getDay()]}
-                          <br />
-                          {this.state.months[event.date.getMonth()]}
-                      </div>
-                      <div className="secondary-font-color day-number">
-                        {event.date.getDate()}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-clearfix card-info">
-                    <a href={`https://www.google.com/maps/place/${event.address.street} ${event.address.zip}/`}
-                      target="_blank"
-                      className="w-inline-block w-clearfix location-icon"
-                    >
-                      <img alt="location icon"
-                        src="images/location-icon.svg"
-                      />
-                    </a>
-                    <div className="secondary-font-color location-name">
-                      {event.place}
-                    </div>
-                    <div className="secondary-font-color location-address">
-                      {event.address.street}
-                      <br />
-                      {event.address.zip}
-                    </div>
-                    <div className="secondary-font-color location-time">
-                      {event.morningStartTime}-{event.morningEndTime}
-                      <br />
-                      {event.noonStartTime}-{event.noonEndTime}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </section>
+            <section>
+              {
+                this.state.newEvents.map((event, index) => {
+                  return <EventItemDate event={event} key={index} />;
+                })
+              }
+            </section>
         </div>
-      </div>
+        </div>
     );
   }
-
 }
 
 export default createContainer(() => {
@@ -121,4 +78,11 @@ EventsByDate.propTypes = {
   events: React.PropTypes.array,
 
 };
+
+//<div className="network-error">
+            //<div className="secondary-font-color alert">
+              //The network was interupted
+              //<br />or you're offline.
+            //</div>
+          //</div>
 

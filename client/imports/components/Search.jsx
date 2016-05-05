@@ -1,7 +1,7 @@
 import React from 'react';
-import ParamStore from 'param-store';
+import { Link } from 'param-store';
+import PlaceItemSearch from './PlaceItemSearch';
 import GooglePlaces from 'react-google-places-component';
-import ItemComponent from './ItemComponent.jsx';
 
 export default class Search extends React.Component {
   constructor(props) {
@@ -22,48 +22,33 @@ export default class Search extends React.Component {
       <div className="body-color">
         <div className="container">
           <nav>
-            <a href="index.html"
+            <Link href="index.html"
               className="nav-text cancel"
-              onClick={e => {
-                ParamStore.set({ path: 'index' });
-                e.preventDefault();
-              }}
+              params={{ path: 'index' }}
             >
               Cancel
-            </a>
+            </Link>
           </nav>
-          {
-            this.state.query ?
-              null :
-              <div className="address-prompt">Type you address or zip,
-                <br /> or use your location
-              </div>
-          }
-          <GooglePlaces
-            options={{ input: this.state.query }}
-            itemProps={{ onClick: this.props.setAddress.bind(this) }}
-            itemComponent={ItemComponent}
+          <input id="address-2"
+            onChange={this.setQuery.bind(this)}
+            type="text"
+            placeholder="Address or zip"
+            name="address-2"
+            data-name="Address 2"
+            className="w-input input"
           />
-          <div className="address-input">
-            <input id="address-2"
-              onChange={this.setQuery.bind(this)}
-              type="text"
-              placeholder="Address or zip"
-              name="address-2"
-              data-name="Address 2"
-              className="w-input input"
-            />
-            <img alt="target icon"
-              src="images/input-icon.svg"
-              className="address-icon"
-            />
+          <div className="address-container">
+            <div className="dates-container">
+              <GooglePlaces
+                options={{ input: this.state.query }}
+                itemProps={{ onClick: this.props.setAddress.bind(this) }}
+                itemComponent={PlaceItemSearch}
+              />
+            </div>
           </div>
         </div>
       </div>
       );
   }
 }
-export default Search;
-Search.propTypes = {
-  setAddress: React.PropTypes.func,
-};
+;

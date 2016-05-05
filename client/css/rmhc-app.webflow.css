@@ -29,6 +29,10 @@ li {
   text-decoration: none;
 }
 
+.btn.primary-btn-color.full-btn {
+  width: 100%;
+}
+
 .primary-btn-color {
   background-color: #ffc829;
 }
@@ -37,21 +41,15 @@ li {
   background-color: #ffda6e;
 }
 
-.primary-font-color {
-  color: #fff;
-}
-
 .container {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   height: 100vh;
   max-width: 320px;
   margin-right: auto;
   margin-left: auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   background-color: #fff;
@@ -107,20 +105,17 @@ li {
   display: inline-block;
   margin-top: 10px;
   font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
   color: #628ecc;
   text-decoration: none;
 }
 
 .nav-text.cancel {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-left: 20px;
 }
 
 .address-input {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
   margin-bottom: 0px;
 }
 
@@ -158,6 +153,7 @@ li {
 }
 
 .location-top-info {
+  position: relative;
   padding-top: 18px;
   padding-bottom: 20px;
   font-family: Montserrat, sans-serif;
@@ -184,7 +180,6 @@ li {
 }
 
 .secondary-font-color.day {
-  margin-left: 20px;
   float: left;
   font-family: Montserrat, sans-serif;
   line-height: 13px;
@@ -224,6 +219,19 @@ li {
   font-size: 28px;
 }
 
+.secondary-font-color.alert {
+  display: block;
+  width: 90%;
+  margin: 13px auto;
+  background-image: url('../images/exit-x.svg');
+  background-position: 100% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
 .back-arrow {
   margin-top: -2px;
   margin-right: 9px;
@@ -231,6 +239,7 @@ li {
 }
 
 .date-container {
+  margin-left: 20px;
   float: left;
 }
 
@@ -292,19 +301,264 @@ li {
 }
 
 .input-container {
+  margin-right: 2%;
+  float: left;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
+  -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   -webkit-box-align: end;
+  -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end;
+  -webkit-align-content: space-around;
   -ms-flex-line-pack: distribute;
   align-content: space-around;
+}
+
+.input-container.location {
+  width: 48%;
+  margin-right: 2%;
+}
+
+.input-container.address {
+  position: relative;
+  width: 48%;
+  margin-right: 0%;
+  margin-left: 2%;
+}
+
+.input-container.date {
+  width: 24%;
+}
+
+.input-container.date-input {
+  width: 15%;
+}
+
+.loading-message {
+  display: block;
+  width: 65%;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: url('../images/Oval 47.svg');
+  background-position: 100% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: left;
+}
+
+.network-error {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  z-index: 100;
+  width: 100%;
+  background-color: #ef303e;
+}
+
+.blank-top {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 20px;
+  background-color: #8e9296;
+}
+
+.blank-card {
+  min-height: 190px;
+  background-color: #d5d5d5;
+}
+
+.window-1 {
+  width: 70px;
+  min-height: 23px;
+  background-color: #eee;
+}
+
+.window-2 {
+  width: 105px;
+  min-height: 15px;
+  margin-top: 15px;
+  margin-left: 20px;
+  background-color: #eee;
+}
+
+.window-3 {
+  width: 134px;
+  min-height: 13px;
+  margin-top: 18px;
+  margin-left: 20px;
+  background-color: #eee;
+}
+
+.window-4 {
+  width: 140px;
+  min-height: 13px;
+  margin-top: 7px;
+  margin-left: 20px;
+  background-color: #eee;
+}
+
+.window-5 {
+  width: 135px;
+  min-height: 16px;
+  margin-top: 17px;
+  margin-left: 20px;
+  background-color: #eee;
+}
+
+.nav.events-nav {
+  min-height: 50px;
+}
+
+.phone-img {
+  margin-top: 44px;
+}
+
+.location-error-message {
+  margin-top: 20px;
+  font-family: Montserrat, sans-serif;
+  color: #628ecc;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.text-field {
+  font-size: 16px;
+}
+
+.field-label {
+  color: #969696;
+  font-size: 13px;
+}
+
+.submit {
+  width: 22%;
+  margin-top: 25px;
+  float: left;
+}
+
+.submit.btn.primary-btn-color {
+  float: right;
+}
+
+.submit.btn.primary-btn-color.small {
+  width: 12%;
+  float: right;
+}
+
+.submit.btn.primary-btn-color.delete {
+  width: 12%;
+  margin-right: 2%;
+  float: right;
+  background-color: #ef303e;
+  color: #fff;
+}
+
+.admin-container {
+  display: block;
+  width: 90%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 40px;
+}
+
+.dates-container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.main-form {
+  margin-bottom: 150px;
+  padding: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  background-color: #eee;
+}
+
+.form-wrapper {
+  margin-bottom: 60px;
+}
+
+.login-container {
+  display: block;
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 40px;
+}
+
+.time-field {
+  display: block;
+  width: 42%;
+  margin-bottom: 0px;
+  float: left;
+}
+
+.middle-text {
+  padding-top: 10px;
+  padding-right: 3%;
+  padding-left: 3%;
+  float: left;
+}
+
+.address-popout {
+  position: absolute;
+  left: 0px;
+  top: 67px;
+  z-index: 999;
+  width: 100%;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.submissions {
+  padding: 20px;
+  border: 2px solid #ddd;
+}
+
+@media (max-width: 991px) {
+  .input-container.date {
+    width: 34%;
+  }
+  .admin-container {
+    width: 100%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -321,3 +575,4 @@ li {
     text-decoration: none;
   }
 }
+

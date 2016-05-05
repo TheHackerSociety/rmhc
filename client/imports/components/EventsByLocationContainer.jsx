@@ -9,7 +9,7 @@ class EventsByLocationContainer extends React.Component {
       return null;
     }
 
-    return <EventsByLocation origin={this.props.origin}/>;
+    return <EventsByLocation {...this.props}/>;
   }
 }
 
