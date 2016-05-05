@@ -22,9 +22,7 @@ export default class EventsByDate extends React.Component {
   }
 
   componentWillReceiveProps(props) {
-    if (this.state.loading) {
-      this.sortByDates(props);
-    }
+    this.sortByDates(props);
   }
 
   openWindow() {
