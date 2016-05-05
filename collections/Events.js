@@ -30,4 +30,3 @@ Events.attachSchema(new SimpleSchema({
     type: String,
   },
 }));
-
