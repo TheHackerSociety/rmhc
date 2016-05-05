@@ -30,3 +30,5 @@ Events.attachSchema(new SimpleSchema({
     type: String,
   },
 }));
+
+export default Events;
