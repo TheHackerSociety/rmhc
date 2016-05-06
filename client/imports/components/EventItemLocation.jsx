@@ -2,6 +2,7 @@ import React from 'react';
 
 const WEEKDAYS = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+const METERS_PER_MILE = 1609.34;
 
 export default class EventItemLocation extends React.Component {
   openWindow(e, event) {
@@ -17,7 +18,7 @@ export default class EventItemLocation extends React.Component {
         <div className="w-clearfix location-card-header">
           <div className="w-clearfix miles-container">
             <div className="miles-number">
-              {(event.distance / 1609.344).toFixed(2)}
+              {(event.distance / METERS_PER_MILE).toFixed(2)}
             </div>
             <div className="miles-text">
               MILES
