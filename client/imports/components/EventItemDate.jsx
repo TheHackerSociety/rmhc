@@ -1,17 +1,19 @@
 import React from 'react';
 
+const WEEKDAYS = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+
 export default class EventItemDate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      weekdays: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
-      months: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
     };
   }
 
 
-  openWindow() {
-    window.open(`https://www.google.com/maps/place/${this.props.event.address.street} ${this.props.event.address.zip}/`, "_system")
+  openWindow(e, event) {
+    e.preventDefault();
+    window.open(`https://www.google.com/maps/place/${event.address.street} ${event.address.zip}/`, '_system');
   }
 
   render() {
@@ -20,9 +22,9 @@ export default class EventItemDate extends React.Component {
         <div className="w-clearfix location-card-header">
           <div className="w-clearfix date-container">
             <div className="secondary-font-color day">
-                {this.state.weekdays[this.props.event.date.getDay()]}
+                {WEEKDAYS[this.props.event.date.getDay()]}
                 <br />
-                {this.state.months[this.props.event.date.getMonth()]}
+                {MONTHS[this.props.event.date.getMonth()]}
             </div>
             <div className="secondary-font-color day-number">
               {this.props.event.date.getDate()}
@@ -30,9 +32,9 @@ export default class EventItemDate extends React.Component {
           </div>
         </div>
         <div className="w-clearfix card-info">
-          <a href='#'
+          <a href="#"
             target="_blank"
-            onClick={this.openWindow.bind(this)}
+            onClick={(e) => this.openWindow(e, event)}
             className="w-inline-block w-clearfix location-icon"
           >
             <img alt="location icon"
@@ -57,4 +59,7 @@ export default class EventItemDate extends React.Component {
       );
   }
 }
-;
+
+EventItemDate.propTypes = {
+  event: React.PropTypes.object,
+};

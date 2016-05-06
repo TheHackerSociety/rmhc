@@ -4,13 +4,17 @@ import EventsByDate from './EventsByDate';
 
 class EventsByDateContainer extends React.Component {
   render() {
-    const {path} = this.props.currentParams;
+    const { path } = this.props.currentParams;
     if (path !== 'events-by-date') {
       return null;
     }
 
-    return <EventsByDate {...this.props}/>;
+    return <EventsByDate {...this.props} />;
   }
 }
 
 export default connect(EventsByDateContainer, 'path');
+
+EventsByDateContainer.propTypes = {
+  currentParams: React.PropTypes.object,
+};

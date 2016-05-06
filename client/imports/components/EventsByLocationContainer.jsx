@@ -4,13 +4,17 @@ import EventsByLocation from './EventsByLocation';
 
 class EventsByLocationContainer extends React.Component {
   render() {
-    const {path} = this.props.currentParams;
+    const { path } = this.props.currentParams;
     if (path !== 'events-by-location') {
       return null;
     }
 
-    return <EventsByLocation {...this.props}/>;
+    return <EventsByLocation {...this.props} />;
   }
 }
 
 export default connect(EventsByLocationContainer, 'path');
+
+EventsByLocationContainer.propTypes = {
+  currentParams: React.PropTypes.object,
+};

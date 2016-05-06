@@ -10,8 +10,8 @@ export default class EventItemLocation extends React.Component {
     };
   }
 
-  openWindow() {
-    window.open(`https://www.google.com/maps/place/${this.props.event.address.street} ${this.props.event.address.zip}/`, "_system")
+  openWindow(e, event) {
+    window.open(`https://www.google.com/maps/place/${event.address.street} ${event.address.zip}/`, '_system');
   }
 
   render() {
@@ -44,9 +44,9 @@ export default class EventItemLocation extends React.Component {
           </div>
         </div>
         <div className="w-clearfix card-info">
-          <a href='#'
+          <a href="#"
             target="_blank"
-            onClick={this.openWindow.bind(this)}
+            onClick={(e) => this.openWindow(e, event)}
             className="w-inline-block w-clearfix location-icon"
           >
             <img alt="location icon" src="images/location-icon.svg" />
@@ -70,3 +70,6 @@ export default class EventItemLocation extends React.Component {
   }
 }
 
+EventItemLocation.propTypes = {
+  event: React.PropTypes.object,
+};

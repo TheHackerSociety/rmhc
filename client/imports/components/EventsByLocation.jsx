@@ -3,19 +3,16 @@ import { Link } from 'param-store';
 import EventItemLocation from './EventItemLocation';
 import EventItemLoading from './EventItemLoading.jsx';
 import { createContainer } from 'meteor/react-meteor-data';
+import _ from 'lodash';
 
 export default class EventsByLocation extends React.Component {
   constructor(props) {
     super(props);
-    console.log();
     this.state = {
-
       loading: true,
       dists: null,
-      groupedArray: null,
-      milesGroups: null,
-      weekdays: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
-      months: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+      groupedArray: [],
+      milesGroups: [],
     };
   }
 
@@ -37,9 +34,9 @@ export default class EventsByLocation extends React.Component {
 
   getDistance() {
     const origin = [this.props.origin.origin];
-    const destinations = this.props.events.map((event) => {
-      return event.address.street+" "+event.address.zip;
-    });
+    const destinations = this.props.events.map((event) => (
+      `${event.address.street} ${event.address.zip}`
+    ));
 
     this.getGoogleDistance(origin, destinations, (response, status) => {
       if (status === google.maps.DistanceMatrixStatus.OK) {
@@ -50,22 +47,13 @@ export default class EventsByLocation extends React.Component {
   }
 
   attachDistanceSortAndGroup() {
-    const newEvents = _.clone(this.props.events);
-    newEvents.forEach((event, index) => {
+    const eventsWithDistance = this.props.events.map((event, index) => {
       event.distance = this.state.dists.elements[index].distance.value;
+      return event;
     });
 
-    newEvents.sort((a, b) => {
-      if (a.distance > b.distance) {
-        return 1;
-      }
-      if (a.distance < b.distance) {
-        return -1;
-      }
-      return 0;
-    });
-
-    const groupedEvents = _.groupBy(newEvents, (event) => {
+    const eventsSortByDistance = _.sortBy(eventsWithDistance, 'distance');
+    const groupedEvents = _.groupBy(eventsSortByDistance, (event) => {
       if (event.distance / 1609.344 > 0 && event.distance / 1609.344 <= 10) {
         return 10;
       }
@@ -115,33 +103,29 @@ export default class EventsByLocation extends React.Component {
       <div className="body-color">
         <div className="container">
           <nav className="nav events-nav">
-            <img src="images/triangle-icon.svg" className="back-arrow" />
-            <Link href="search.html" className="nav-text" params={{  path: 'search'}}> Back
+            <img alt="triangle" src="images/triangle-icon.svg" className="back-arrow" />
+            <Link href="search.html" className="nav-text" params={{ path: 'search' }}> Back
             </Link>
           </nav>
           <div>
             {
-              this.state.groupedArray.map((array, index) => {
-                return (
-                  <section key={index}>
-                    <div className="location-top-info">
-                      <div>
-                      {this.state.milesGroups[index]}
-                      </div>
+              this.state.groupedArray.map((array, index) => (
+                <section key={index}>
+                  <div className="location-top-info">
+                    <div>
+                    {this.state.milesGroups[index]}
                     </div>
-                      {
-                        array.map((event, index) => {
-                          return(
-                            <EventItemLocation
-                              key={index + 3}
-                              event={event}
-                            />
-                          )
-                        })
-                      }
-                  </section>
-                );
-              })
+                  </div>
+                    {
+                      array.map((event, index) => (
+                        <EventItemLocation
+                          key={index + 3}
+                          event={event}
+                        />
+                      ))
+                    }
+                </section>
+              ))
             }
           </div>
         </div>

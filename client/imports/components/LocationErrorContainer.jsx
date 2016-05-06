@@ -4,13 +4,17 @@ import LocationError from './LocationError';
 
 class LocationErrorContainer extends React.Component {
   render() {
-    const {path} = this.props.currentParams;
+    const { path } = this.props.currentParams;
     if (path !== 'location-error') {
       return null;
     }
 
-    return <LocationError origin={this.props.origin}/>;
+    return <LocationError />;
   }
 }
 
 export default connect(LocationErrorContainer, 'path');
+
+LocationErrorContainer.propTypes = {
+  currentParams: React.PropTypes.object,
+};

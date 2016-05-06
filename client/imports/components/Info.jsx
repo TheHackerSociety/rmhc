@@ -1,20 +1,22 @@
 import React from 'react';
 import { Link } from 'param-store';
 
-export default class Info extends React.Component {
-  render() {
-    return (
+const Info = ({}) => (
       <div className="body-color">
         <div className="container">
           <nav className="nav-padding">
-            <img src="images/triangle-icon.svg" className="back-arrow" />
-            <Link href="index.html" className="nav-text" params={{  path: 'index'}}> Back
+            <img alt="triangle" src="images/triangle-icon.svg" className="back-arrow" />
+            <Link href="index.html" className="nav-text" params={{ path: 'index' }}> Back
             </Link>
           </nav>
           <section className="details-section">
             <p className="service-paragraph">
-              Ronald McDonald Care Mobile <span className="bold-text">FREE</span> capabilities and pediatric primary care services provided will vary by each community’s
-              needs and may include:
+              Ronald McDonald Care Mobile
+              <span className="bold-text">
+                FREE
+              </span>
+              capabilities and pediatric primary care services provided will
+              vary by each community’s needs and may include:
             </p>
             <ul>
               <li>
@@ -54,7 +56,5 @@ export default class Info extends React.Component {
           </section>
         </div>
       </div>
-      );
-  }
-}
-;
+);
+export default Info;

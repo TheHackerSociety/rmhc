@@ -10,6 +10,7 @@ export default class Search extends React.Component {
     this.state = {
       query: '',
     };
+    this.setQuery = this.setQuery.bind(this);
   }
 
   setQuery(e) {
@@ -30,7 +31,7 @@ export default class Search extends React.Component {
             </Link>
           </nav>
           <input id="address-2"
-            onChange={this.setQuery.bind(this)}
+            onChange={this.setQuery}
             type="text"
             placeholder="Address or zip"
             name="address-2"
@@ -46,7 +47,7 @@ export default class Search extends React.Component {
             <div className="dates-container">
               <GooglePlaces
                 options={{ input: this.state.query }}
-                itemProps={{ onClick: this.props.setAddress.bind(this) }}
+                itemProps={{ onClick: this.props.setAddress }}
                 itemComponent={PlaceItemSearch}
               />
             </div>
@@ -56,3 +57,7 @@ export default class Search extends React.Component {
       );
   }
 }
+
+Search.propTypes = {
+  setAddress: React.PropTypes.func,
+};

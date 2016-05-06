@@ -10,15 +10,19 @@ export default class Admin extends React.Component {
           <img alt="Ronald McDonald House Charities logo"
             width="178"
             src="images/rmhc-logo.png"
-            className="center" /><img alt="Ronald McDonald Care Mobile "
-                                                                                                                        width="280"
-                                                                                                                        src="images/care-mobile-logo.png"
-                                                                                                                        className="center care-mobile-logo" />
+            className="center"
+          />
+            <img alt="Ronald McDonald Care Mobile "
+              width="280"
+              src="images/care-mobile-logo.png"
+              className="center care-mobile-logo"
+            />
           <div className="w-form form-wrapper">
             <form id="email-form"
               name="email-form"
               data-name="Email Form"
-              className="w-clearfix main-form">
+              className="w-clearfix main-form"
+            >
               <div className="input-container location">
                 <label htmlFor="Location-2">
                   Location Name:
@@ -29,7 +33,8 @@ export default class Admin extends React.Component {
                   name="Location-2"
                   data-name="Location 2"
                   required="required"
-                  className="w-input text-field" />
+                  className="w-input text-field"
+                />
               </div>
               <div className="input-container address">
                 <label htmlFor="Address-2">
@@ -41,14 +46,13 @@ export default class Admin extends React.Component {
                   name="Address-2"
                   data-name="Address 2"
                   required="required"
-                  className="w-input text-field" />
+                  className="w-input text-field"
+                />
                 <div className="address-popout">
-                  <PlaceItemAdmin></PlaceItemAdmin>
-                  <PlaceItemAdmin></PlaceItemAdmin>
-                  <PlaceItemAdmin></PlaceItemAdmin>
-                  <PlaceItemAdmin></PlaceItemAdmin>
-                  <PlaceItemAdmin></PlaceItemAdmin>
-                  <PlaceItemAdmin></PlaceItemAdmin>
+                  <PlaceItemAdmin />
+                  <PlaceItemAdmin />
+                  <PlaceItemAdmin />
+                  <PlaceItemAdmin />
                 </div>
               </div>
               <div className="input-container date-input">
@@ -61,7 +65,8 @@ export default class Admin extends React.Component {
                   name="Date-2"
                   data-name="Date 2"
                   required="required"
-                  className="w-input text-field" />
+                  className="w-input text-field"
+                />
               </div>
               <div className="w-clearfix input-container date">
                 <label htmlFor="field-27">
@@ -70,7 +75,8 @@ export default class Admin extends React.Component {
                 <select id="field-27"
                   name="field-27"
                   data-name="Field 27"
-                  className="w-select time-field">
+                  className="w-select time-field"
+                >
                   <option value="8:00 am">
                     8:00 am
                   </option>
@@ -129,7 +135,8 @@ export default class Admin extends React.Component {
                 <select id="field-28"
                   name="field-28"
                   data-name="Field 28"
-                  className="w-select time-field">
+                  className="w-select time-field"
+                >
                   <option value="8:00 am">
                     8:00 am
                   </option>
@@ -190,7 +197,8 @@ export default class Admin extends React.Component {
                 <select id="field-29"
                   name="field-29"
                   data-name="Field 29"
-                  className="w-select time-field">
+                  className="w-select time-field"
+                >
                   <option value="12:00 pm">
                     12:00 pm
                   </option>
@@ -297,7 +305,8 @@ export default class Admin extends React.Component {
                 <select id="field-30"
                   name="field-30"
                   data-name="Field 30"
-                  className="w-select time-field">
+                  className="w-select time-field"
+                >
                   <option value="12:00 pm">
                     12:00 pm
                   </option>
@@ -402,7 +411,8 @@ export default class Admin extends React.Component {
               <input type="submit"
                 value="Submit"
                 data-wait="Please wait..."
-                className="w-button submit btn primary-btn-color" />
+                className="w-button submit btn primary-btn-color"
+              />
             </form>
             <div className="w-form-done">
               <p>
@@ -416,7 +426,7 @@ export default class Admin extends React.Component {
             </div>
           </div>
           <div className="w-form form-wrapper">
-            <EventDetailsItem></EventDetailsItem>
+            <EventDetailsItem />
             <div className="w-form-done">
               <p>
                 Thank you! Your submission has been received!
@@ -433,4 +443,3 @@ export default class Admin extends React.Component {
       );
   }
 }
-;

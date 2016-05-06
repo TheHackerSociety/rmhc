@@ -8,10 +8,13 @@ export default class Login extends React.Component {
           <img alt="Ronald McDonald House Charities logo"
             width="178"
             src="images/rmhc-logo.png"
-            className="center" /><img alt="Ronald McDonald Care Mobile "
-                                                                                                                        width="280"
-                                                                                                                        src="images/care-mobile-logo.png"
-                                                                                                                        className="center care-mobile-logo" />
+            className="center"
+          />
+          <img alt="Ronald McDonald Care Mobile "
+            width="280"
+            src="images/care-mobile-logo.png"
+            className="center care-mobile-logo"
+          />
           <div className="w-form">
             <form id="email-form" name="email-form" data-name="Email Form">
               <label htmlFor="UserName">
@@ -23,7 +26,8 @@ export default class Login extends React.Component {
                 name="UserName"
                 data-name="UserName"
                 required="required"
-                className="w-input" />
+                className="w-input"
+              />
               <label htmlFor="Password">
                 Password:
               </label>
@@ -33,11 +37,13 @@ export default class Login extends React.Component {
                 name="Password"
                 data-name="Password"
                 required="required"
-                className="w-input" />
+                className="w-input"
+              />
               <input type="submit"
                 value="Submit"
                 data-wait="Please wait..."
-                className="w-button btn primary-btn-color full-btn" />
+                className="w-button btn primary-btn-color full-btn"
+              />
             </form>
             <div className="w-form-done">
               <p>
@@ -55,4 +61,3 @@ export default class Login extends React.Component {
       );
   }
 }
-;

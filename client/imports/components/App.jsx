@@ -10,11 +10,12 @@ import SearchContainer from './SearchContainer';
 import ParamStore from 'param-store';
 
 export default class App extends React.Component {
- constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       address: null,
     };
+    this.setAddress = this.setAddress.bind(this);
   }
 
   setAddress(address) {
@@ -25,14 +26,14 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <AdminContainer/>
-        <EventsByDateContainer/>
-        <EventsByLocationContainer origin={this.state.address}/>
-        <IndexContainer/>
-        <InfoContainer/>
+        <AdminContainer />
+        <EventsByDateContainer />
+        <EventsByLocationContainer origin={this.state.address} />
+        <IndexContainer />
+        <InfoContainer />
         <LocationErrorContainer />
-        <LoginContainer/>
-        <SearchContainer setAddress={this.setAddress.bind(this)}/>
+        <LoginContainer />
+        <SearchContainer setAddress={this.setAddress} />
       </div>
       );
   }

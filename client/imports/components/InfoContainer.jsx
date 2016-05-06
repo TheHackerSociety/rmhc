@@ -4,13 +4,16 @@ import Info from './Info';
 
 class InfoContainer extends React.Component {
   render() {
-    const {path} = this.props.currentParams;
+    const { path } = this.props.currentParams;
     if (path !== 'info') {
       return null;
     }
 
-    return <Info {...this.props}/>;
+    return <Info {...this.props} />;
   }
 }
 
 export default connect(InfoContainer, 'path');
+InfoContainer.propTypes = {
+  currentParams: React.PropTypes.object,
+};
