@@ -12,11 +12,6 @@ export default class EventItemLocation extends React.Component {
   render() {
     const { event } = this.props;
 
-    if (!this.props.event) {
-      return (
-        <div>Loading</div>
-      );
-    }
     return (
       <div className="location-card">
         <div className="w-clearfix location-card-header">
