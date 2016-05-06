@@ -6,16 +6,7 @@ import GooglePlaces from 'react-google-places-component';
 export default class Search extends React.Component {
   constructor(props) {
     super(props);
-    console.log();
-    this.state = {
-      query: '',
-    };
-    this.setQuery = this.setQuery.bind(this);
-  }
-
-  setQuery(e) {
-    const query = e.target.value;
-    this.setState({ query });
+    this.state = { query: '' };
   }
 
   render() {
@@ -31,7 +22,7 @@ export default class Search extends React.Component {
             </Link>
           </nav>
           <input id="address-2"
-            onChange={this.setQuery}
+            onChange={(e) => this.setState({query: e.target.value})}
             type="text"
             placeholder="Address or zip"
             name="address-2"
