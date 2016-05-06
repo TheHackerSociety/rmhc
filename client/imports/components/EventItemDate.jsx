@@ -17,17 +17,19 @@ export default class EventItemDate extends React.Component {
   }
 
   render() {
+    const { event } = this.props;
+
     return (
       <div className="location-card">
         <div className="w-clearfix location-card-header">
           <div className="w-clearfix date-container">
             <div className="secondary-font-color day">
-                {WEEKDAYS[this.props.event.date.getDay()]}
+                {WEEKDAYS[event.date.getDay()]}
                 <br />
-                {MONTHS[this.props.event.date.getMonth()]}
+                {MONTHS[event.date.getMonth()]}
             </div>
             <div className="secondary-font-color day-number">
-              {this.props.event.date.getDate()}
+              {event.date.getDate()}
             </div>
           </div>
         </div>
@@ -42,17 +44,17 @@ export default class EventItemDate extends React.Component {
             />
           </a>
           <div className="secondary-font-color location-name">
-            {this.props.event.place}
+            {event.place}
           </div>
           <div className="secondary-font-color location-address">
-            {this.props.event.address.street}
+            {event.address.street}
             <br />
-            {this.props.event.address.zip}
+            {event.address.zip}
           </div>
           <div className="secondary-font-color location-time">
-            {this.props.event.morningStartTime}-{this.props.event.morningEndTime}
+            {event.morningStartTime}-{event.morningEndTime}
             <br />
-            {this.props.event.noonStartTime}-{this.props.event.noonEndTime}
+            {event.noonStartTime}-{event.noonEndTime}
           </div>
         </div>
       </div>

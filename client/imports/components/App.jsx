@@ -1,11 +1,11 @@
 import React from 'react';
-import AdminContainer from './AdminContainer';
+import AdminContainer from './admin/AdminContainer';
 import EventsByDateContainer from './EventsByDateContainer';
 import EventsByLocationContainer from './EventsByLocationContainer';
 import IndexContainer from './IndexContainer';
 import InfoContainer from './InfoContainer';
-import LocationErrorContainer from './LocationErrorContainer';
-import LoginContainer from './LoginContainer';
+import LocationErrorContainer from './error/LocationErrorContainer';
+import LoginContainer from './admin/LoginContainer';
 import SearchContainer from './SearchContainer';
 import ParamStore from 'param-store';
 

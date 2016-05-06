@@ -1,20 +1,17 @@
 import React from 'react';
 
+const WEEKDAYS = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
 export default class EventItemLocation extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      weekdays: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
-      months: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-    };
-  }
-
   openWindow(e, event) {
+    e.preventDefault();
     window.open(`https://www.google.com/maps/place/${event.address.street} ${event.address.zip}/`, '_system');
   }
 
   render() {
+    const { event } = this.props;
+
     if (!this.props.event) {
       return (
         <div>Loading</div>
@@ -25,7 +22,7 @@ export default class EventItemLocation extends React.Component {
         <div className="w-clearfix location-card-header">
           <div className="w-clearfix miles-container">
             <div className="miles-number">
-              {(this.props.event.distance / 1609.344).toFixed(2)}
+              {(event.distance / 1609.344).toFixed(2)}
             </div>
             <div className="miles-text">
               MILES
@@ -34,12 +31,12 @@ export default class EventItemLocation extends React.Component {
           </div>
           <div className="w-clearfix date-container">
             <div className="secondary-font-color day">
-              {this.state.weekdays[this.props.event.date.getDay()]}
+              {WEEKDAYS[event.date.getDay()]}
               <br />
-              {this.state.months[this.props.event.date.getMonth()]}
+              {MONTHS[event.date.getMonth()]}
               </div>
             <div className="secondary-font-color day-number">
-              {this.props.event.date.getDate()}
+              {event.date.getDate()}
             </div>
           </div>
         </div>
@@ -52,17 +49,17 @@ export default class EventItemLocation extends React.Component {
             <img alt="location icon" src="images/location-icon.svg" />
           </a>
           <div className="secondary-font-color location-name">
-            {this.props.event.place}
+            {event.place}
           </div>
           <div className="secondary-font-color location-address">
-            {this.props.event.address.street}
+            {event.address.street}
             <br />
-            {this.props.event.address.zip}
+            {event.address.zip}
           </div>
           <div className="secondary-font-color location-time">
-            {this.props.event.morningStartTime}-{this.props.event.morningEndTime}
+            {event.morningStartTime}-{event.morningEndTime}
             <br />
-            {this.props.event.noonStartTime}-{this.props.event.noonEndTime}
+            {event.noonStartTime}-{event.noonEndTime}
           </div>
         </div>
       </div>
