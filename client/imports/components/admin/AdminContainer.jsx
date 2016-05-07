@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'param-store';
+import { createContainer } from 'meteor/react-meteor-data';
 import Admin from './Admin';
 
 class AdminContainer extends React.Component {
@@ -13,7 +14,12 @@ class AdminContainer extends React.Component {
   }
 }
 
-export default connect(AdminContainer, 'path');
+const AdminWithData = createContainer({
+  events: Events.find().fetch()
+}, AdminContainer)
+
+export default connect(AdminWithData, 'path');
+
 AdminContainer.propTypes = {
   currentParams: React.PropTypes.object,
 };

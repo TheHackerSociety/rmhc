@@ -3,12 +3,6 @@ import React from 'react';
 export default class PlaceItemAdmin extends React.Component {
   constructor(props) {
     super(props);
-    this.setAddress = this.setAddress.bind(this);
-  }
-
-  setAddress(e) {
-    console.log(e.target.innerHTML);
-    this.props.onClick(e.target.innerHTML);
   }
 
   render() {
@@ -19,7 +13,7 @@ export default class PlaceItemAdmin extends React.Component {
           className="w-inline-block address-option"
 
         >
-          <div onClick={this.setAddress}>{prediction.description}</div>
+          <div onClick={(e) => {this.props.onClick(e, prediction)}}>{prediction.description}</div>
         </a>
       );
     }
