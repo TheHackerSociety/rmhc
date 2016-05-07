@@ -15,4 +15,20 @@ Meteor.startup(() => {
     };
     Accounts.createUser(options);
   }
+
+  var localeFromBrowser = window.navigator.userLanguage || window.navigator.userLanguage
+  var locale = 'en';
+
+  for (var i=0; i< supportedLanguages.length; i++){
+    var languageObj = supportedLanguages[i];
+    if(localeFromBrowser.match(languageObj.regex)){
+      
+      locale = languageObj.language;
+      break;
+    }
+  }
+
+  i18n.setLanguage(locale);
+
+
 });
