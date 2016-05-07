@@ -38,8 +38,7 @@ export default class Search extends React.Component {
               <GooglePlaces
                 options={{ input: this.state.query }}
                 itemProps={{ onClick: this.props.setAddress }}
-                itemComponent={PlaceItemSearch}
-              />
+                itemComponent={PlaceItemSearch} />
             </div>
           </div>
         </div>
