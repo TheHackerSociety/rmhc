@@ -1,9 +1,18 @@
 import React from 'react';
 
-export default class MorningSelect extends React.Component {
-  render() {
+export default class AfternoonSelect extends React.Component {
+   selectTime(e){
+    const timeObject = {}
+    timeObject[this.props.timeKey.toString()] = e.target.value;
+    this.props.setTime(timeObject);
+  }
+
+ render() {
     return (
-      <select id="field-29"
+      <select
+        onChange={this.selectTime.bind(this)}
+        defaultValue={this.props.defaultTime}
+        id="field-29"
         name="field-29"
         data-name="Field 29"
         className="w-select time-field"
