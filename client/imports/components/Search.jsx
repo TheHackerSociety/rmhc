@@ -38,7 +38,7 @@ export default class Search extends React.Component {
     }
     else {
 
-      console.log("position doesn't exists");
+      alert("can't get current location");
     }
   }
 
