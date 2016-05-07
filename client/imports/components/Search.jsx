@@ -28,8 +28,8 @@ export default class Search extends React.Component {
           if (results && results.length){
 
             const { formatted_address } = results[0];
-         
-            self.setState({query: formatted_address});
+
+            self.props.setAddress(formatted_address);
 
           }
         });
