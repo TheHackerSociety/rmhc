@@ -9,6 +9,10 @@ export default class Search extends React.Component {
     this.state = { query: '' };
   }
 
+  searchByGeolocation() {
+
+  }
+
   render() {
     return (
       <div className="body-color">
@@ -28,6 +32,11 @@ export default class Search extends React.Component {
             data-name="Address 2"
             className="w-input input"
           />
+          <img
+            onClick={() => this.searchByGeolocation()}
+            alt="target icon"
+            src="images/input-icon.svg"
+            className="address-icon"/>
           {
             this.state.query
               ? null

@@ -1,5 +1,14 @@
 Events = new Mongo.Collection('events');
 
+Events.allow({
+  insert: function (userId) {
+    return userId
+  },
+  remove: function (userId) {
+    return userId
+  },
+})
+
 Events.attachSchema(new SimpleSchema({
   place: {
     type: String,
@@ -19,15 +28,19 @@ Events.attachSchema(new SimpleSchema({
   },
   morningStartTime: {
     type: String,
+    optional: true
   },
   morningEndTime: {
     type: String,
+    optional: true
   },
   noonStartTime: {
     type: String,
+    optional: true
   },
   noonEndTime: {
     type: String,
+    optional: true
   },
 }));
 

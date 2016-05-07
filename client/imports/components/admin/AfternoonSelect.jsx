@@ -1,9 +1,12 @@
 import React from 'react';
 
-export default class MorningSelect extends React.Component {
-  render() {
+export default class AfternoonSelect extends React.Component {
+ render() {
     return (
-      <select id="field-29"
+      <select
+        onChange={this.props.onChange}
+        value={this.props.value}
+        id="field-29"
         name="field-29"
         data-name="Field 29"
         className="w-select time-field"
