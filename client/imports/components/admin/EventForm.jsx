@@ -20,6 +20,8 @@ export default class EventForm extends React.Component {
       morningEndTime: '11:15 am',
       noonStartTime: '1:00 pm',
       noonEndTime: '2:00 pm',
+      haveMorning: true,
+      haveEvening: true
     }
   }
 
@@ -31,7 +33,19 @@ export default class EventForm extends React.Component {
       zip: event.zip
     }
 
+    if (!event.haveMorning) {
+      event.morningStartTime = ''
+      event.morningEndTime = ''
+    }
+
+    if (!event.haveEvening) {
+      event.noonStartTime = ''
+      event.noonEndTime = ''
+    }
+
     delete event.street
+    delete event.haveMorning
+    delete event.haveEvening
     delete event.zip
 
     Events.insert(event)
@@ -113,35 +127,71 @@ export default class EventForm extends React.Component {
               required="required"
               className="w-input text-field" />
           </div>
+
+
           <div className="w-clearfix input-container date">
             <label htmlFor="field-27">
               Morning Session:
-            </label>
-            <MorningSelect
-              onChange={(e) => this.setState({morningStartTime: e.target.value})}
-              value={this.state.morningStartTime}
-            />
-            <div className="middle-text">
-              to
-            </div>
-            <MorningSelect
-              onChange={(e) => this.setState({morningEndTime: e.target.value})}
-              value={this.state.morningEndTime} />
-          </div>
-          <div className="w-clearfix input-container date">
-            <label htmlFor="field-29">
-              Afternoon Session:
-            </label>
-            <AfternoonSelect
-              onChange={(e) => this.setState({noonStartTime: e.target.value})}
-              value={this.state.noonStartTime} />
-            <div className="middle-text">
-              to
-            </div>
-            <AfternoonSelect
-              onChange={(e) => this.setState({noonEndTime: e.target.value})}
-              value={this.state.noonEndTime} />
-          </div>
+              <input type='checkbox'
+                checked={this.state.haveMorning}
+                onChange={(e) => {
+                  this.setState({
+                    haveMorning: e.target.checked
+                  })
+                }
+                }
+                  />
+                </label>
+                {
+
+                  this.state.haveMorning ?
+                    <div>
+                      <MorningSelect
+                        onChange={(e) => this.setState({morningStartTime: e.target.value})}
+                        value={this.state.morningStartTime}
+                      />
+                      <div className="middle-text">
+                        to
+                      </div>
+                      <MorningSelect
+                        onChange={(e) => this.setState({morningEndTime: e.target.value})}
+                        value={this.state.morningEndTime} />
+                    </div>
+                    : null
+
+                    }
+                  </div>
+
+                  <div className="w-clearfix input-container date">
+                    <label htmlFor="field-29">
+                      Afternoon Session:
+                      <input type='checkbox'
+                        checked={this.state.haveEvening}
+                        onChange={(e) => {
+                          this.setState({
+                            haveEvening: e.target.checked
+                          })
+                        }
+                        }
+                          />
+                        </label>
+
+                        {
+                          this.state.haveEvening ?
+                          <div>
+                            <AfternoonSelect
+                              onChange={(e) => this.setState({noonStartTime: e.target.value})}
+                              value={this.state.noonStartTime} />
+                            <div className="middle-text">
+                              to
+                            </div>
+                            <AfternoonSelect
+                              onChange={(e) => this.setState({noonEndTime: e.target.value})}
+                              value={this.state.noonEndTime} />
+                          </div>:
+                            null
+                          }
+                        </div>
           <input type="submit"
             value="Submit"
             data-wait="Please wait..."
