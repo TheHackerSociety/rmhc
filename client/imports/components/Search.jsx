@@ -16,8 +16,7 @@ export default class Search extends React.Component {
           <nav>
             <Link href="index.html"
               className="nav-text cancel"
-              params={{ path: 'index' }}
-            >
+              params={{ path: 'index' }} >
               Cancel
             </Link>
           </nav>
@@ -30,9 +29,9 @@ export default class Search extends React.Component {
             className="w-input input"
           />
           {
-            this.state.query ?
-              null :
-                  <div className="address-prompt">Type your address or zip</div>
+            this.state.query
+              ? null
+              : <div className="address-prompt">Type your address or zip</div>
           }
           <div className="address-container">
             <div className="dates-container">
