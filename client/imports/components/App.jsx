@@ -26,7 +26,6 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <AdminContainer />
         <EventsByDateContainer />
         <EventsByLocationContainer origin={this.state.address} />
         <IndexContainer />

@@ -5,7 +5,7 @@ import Admin from './Admin';
 class AdminContainer extends React.Component {
   render() {
     const { path } = this.props.currentParams;
-    if (path !== 'admin') {
+    if (path !== 'xxx') {
       return null;
     }
 

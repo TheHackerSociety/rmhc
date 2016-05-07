@@ -1,6 +1,25 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor';
 
 export default class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: null,
+      password: null,
+    };
+  }
+
+  loginUser() {
+    const { username, password } = this.state;
+
+    Meteor.loginWithPassword(username, password, (err) => {
+      if (err) {
+        alert('wrong password');
+      }
+    });
+  }
+
   render() {
     return (
       <div>
@@ -16,48 +35,38 @@ export default class Login extends React.Component {
             className="center care-mobile-logo"
           />
           <div className="w-form">
-            <form id="email-form" name="email-form" data-name="Email Form">
               <label htmlFor="UserName">
                 User Name:
               </label>
               <input id="UserName"
-                type="email"
+                onBlur={(e) => this.setState({ username: e.target.value })}
+                type="text"
                 placeholder="Enter your User Name"
                 name="UserName"
                 data-name="UserName"
                 required="required"
-                className="w-input"
-              />
+                className="w-input" />
               <label htmlFor="Password">
                 Password:
               </label>
               <input id="Password"
+                onBlur={(e) => this.setState({ password: e.target.value })}
                 type="password"
                 placeholder="Enter your Password"
                 name="Password"
                 data-name="Password"
                 required="required"
-                className="w-input"
-              />
+                className="w-input" />
               <input type="submit"
+                onClick={this.loginUser.bind(this)}
                 value="Submit"
                 data-wait="Please wait..."
-                className="w-button btn primary-btn-color full-btn"
-              />
-            </form>
-            <div className="w-form-done">
-              <p>
-                Thank you! Your submission has been received!
-              </p>
-            </div>
-            <div className="w-form-fail">
-              <p>
-                Oops! Something went wrong while submitting the form
-              </p>
-            </div>
+                className="w-button btn primary-btn-color full-btn" />
           </div>
         </section>
       </div>
       );
   }
 }
+;
+

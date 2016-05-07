@@ -21,3 +21,5 @@ static-html
 aldeed:simple-schema
 aldeed:collection2
 react-meteor-data
+accounts-base
+accounts-password
