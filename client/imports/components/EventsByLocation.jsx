@@ -5,100 +5,92 @@ import EventItemLoading from './EventItemLoading.jsx';
 import { createContainer } from 'meteor/react-meteor-data';
 import _ from 'lodash';
 
+const METERS_PER_MILE = 1609.34;
+
 export default class EventsByLocation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: true,
-      dists: null,
-      groupedArray: [],
-      milesGroups: [],
+      eventsGroupedByDistance: {}
     };
   }
 
   componentWillMount() {
     if (this.props.events.length > 0) {
-      this.getDistance();
+      this.getEventsGroupedByDistance((eventsGroupedByDistance) => {
+        this.setState({eventsGroupedByDistance, loading: false});
+      });
     }
   }
 
-  getGoogleDistance(origin, destinations, callback) {
+  getEventsGroupedByDistance(callback) {
+    const {events, origin} = this.props;
+
+    const destinations = events.map((event) => (
+      `${event.address.street} ${event.address.zip}`
+    ));
+
+    this.getGoogleDistance([origin], destinations, (response, status) => {
+      if (status === google.maps.DistanceMatrixStatus.OK) {
+        const distances = _.map(response.rows[0].elements, 'distance.value');
+        const eventsWithDistance = _(_.zip(events, distances))
+          .map(function (eventWithDistance) {
+            const [event, distance] = eventWithDistance;
+            event.distance = distance;
+            return event;
+          })
+          .sortBy('distance')
+          .value();
+
+        const eventsGroupedByDistance = _.groupBy(eventsWithDistance, function ({distance}) {
+          if (distance <= 10 * METERS_PER_MILE) {
+            return 'Within 10 Miles';
+          } else if (distance <= 20 * METERS_PER_MILE) {
+            return 'Within 20 Miles';
+          } else {
+            return 'Further than 20 Miles';
+          }
+        })
+
+        callback(eventsGroupedByDistance);
+      }
+    });
+  }
+
+  getGoogleDistance(origins, destinations, callback) {
     const service = new google.maps.DistanceMatrixService();
     service.getDistanceMatrix({
-      origins: origin,
+      origins,
       destinations,
       travelMode: google.maps.TravelMode.DRIVING,
       unitSystem: google.maps.UnitSystem.IMPERIAL,
     }, callback);
   }
 
-  getDistance() {
-    const origin = [this.props.origin.origin];
-    const destinations = this.props.events.map((event) => (
-      `${event.address.street} ${event.address.zip}`
-    ));
-
-    this.getGoogleDistance(origin, destinations, (response, status) => {
-      if (status === google.maps.DistanceMatrixStatus.OK) {
-        this.setState({ dists: response.rows[0] });
-        this.attachDistanceSortAndGroup();
-      }
-    });
-  }
-
-  attachDistanceSortAndGroup() {
-    const eventsWithDistance = this.props.events.map((event, index) => {
-      event.distance = this.state.dists.elements[index].distance.value;
-      return event;
-    });
-
-    const eventsSortByDistance = _.sortBy(eventsWithDistance, 'distance');
-    const groupedEvents = _.groupBy(eventsSortByDistance, (event) => {
-      if (event.distance / 1609.344 > 0 && event.distance / 1609.344 <= 10) {
-        return 10;
-      }
-      if (event.distance / 1609.344 > 10 && event.distance / 1609.344 <= 20) {
-        return 20;
-      }
-      return 30;
-    });
-
-    const groupedArray = [];
-    const milesGroups = [];
-
-    for (const group in groupedEvents) {
-      if (group === '10') {
-        milesGroups.push('Within 10 miles');
-      } else if (group === '20') {
-        milesGroups.push('Within 20 miles');
-      } else {
-        milesGroups.push('Further than 20 miles');
-      }
-
-      groupedArray.push(groupedEvents[group]);
-    }
-
-    this.setState({ groupedArray, milesGroups, loading: false });
-  }
-
   render() {
     if (this.state.loading) {
-      return (
-        <div>
-          <section>
-            <div className="location-top-info">
-              <div className="loading-message">
-                Fetching locations
-              </div>
-              <EventItemLoading />
-              <EventItemLoading />
-              <EventItemLoading />
-              <EventItemLoading />
-            </div>
-          </section>
-        </div>
-      );
+      return <Loading />;
     }
+
+    const groupedEvents = _.map(
+      this.state.eventsGroupedByDistance,
+      (events, groupTitle) => (
+        <section key={groupTitle}>
+          <div className="location-top-info">
+            <div>
+              {groupTitle}
+            </div>
+          </div>
+          {
+            events.map((event, index) => (
+              <EventItemLocation key={index} event={event} />
+            ))
+          }
+        </section>
+      )
+    )
+
     return (
       <div className="body-color">
         <div className="container">
@@ -108,25 +100,7 @@ export default class EventsByLocation extends React.Component {
             </Link>
           </nav>
           <div>
-            {
-              this.state.groupedArray.map((array, index) => (
-                <section key={index}>
-                  <div className="location-top-info">
-                    <div>
-                    {this.state.milesGroups[index]}
-                    </div>
-                  </div>
-                    {
-                      array.map((event, index) => (
-                        <EventItemLocation
-                          key={index + 3}
-                          event={event}
-                        />
-                      ))
-                    }
-                </section>
-              ))
-            }
+            {groupedEvents}
           </div>
         </div>
       </div>
@@ -135,14 +109,31 @@ export default class EventsByLocation extends React.Component {
 }
 
 export default createContainer((address) => {
-  const origin = address;
   return {
-    origin,
+    origin: address.origin,
     events: Events.find({}).fetch(),
   };
 }, EventsByLocation);
 
 EventsByLocation.propTypes = {
   events: React.PropTypes.array,
-  origin: React.PropTypes.object,
+  address: React.PropTypes.object,
 };
+
+function Loading () {
+  return (
+    <div>
+      <section>
+        <div className="location-top-info">
+          <div className="loading-message">
+            Fetching locations
+          </div>
+          <EventItemLoading />
+          <EventItemLoading />
+          <EventItemLoading />
+          <EventItemLoading />
+        </div>
+      </section>
+    </div>
+  )
+}

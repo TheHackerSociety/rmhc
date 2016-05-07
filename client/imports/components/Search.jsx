@@ -6,16 +6,7 @@ import GooglePlaces from 'react-google-places-component';
 export default class Search extends React.Component {
   constructor(props) {
     super(props);
-    console.log();
-    this.state = {
-      query: '',
-    };
-    this.setQuery = this.setQuery.bind(this);
-  }
-
-  setQuery(e) {
-    const query = e.target.value;
-    this.setState({ query });
+    this.state = { query: '' };
   }
 
   render() {
@@ -25,13 +16,12 @@ export default class Search extends React.Component {
           <nav>
             <Link href="index.html"
               className="nav-text cancel"
-              params={{ path: 'index' }}
-            >
+              params={{ path: 'index' }} >
               Cancel
             </Link>
           </nav>
           <input id="address-2"
-            onChange={this.setQuery}
+            onChange={(e) => this.setState({query: e.target.value})}
             type="text"
             placeholder="Address or zip"
             name="address-2"
@@ -39,17 +29,16 @@ export default class Search extends React.Component {
             className="w-input input"
           />
           {
-            this.state.query ?
-              null :
-                  <div className="address-prompt">Type your address or zip</div>
+            this.state.query
+              ? null
+              : <div className="address-prompt">Type your address or zip</div>
           }
           <div className="address-container">
             <div className="dates-container">
               <GooglePlaces
                 options={{ input: this.state.query }}
                 itemProps={{ onClick: this.props.setAddress }}
-                itemComponent={PlaceItemSearch}
-              />
+                itemComponent={PlaceItemSearch} />
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ export default class PlaceItemSearch extends React.Component {
   }
 
   setAddress(e) {
+    e.preventDefault();
     this.props.onClick(e.target.text);
   }
 
