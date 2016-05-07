@@ -11,6 +11,35 @@ export default class Search extends React.Component {
 
   searchByGeolocation() {
 
+    const self = this;
+
+    if (navigator.geolocation) {
+
+      navigator.geolocation.getCurrentPosition(function(position){
+
+        const { latitude, longitude } = position.coords;
+
+        const latlng = { lat: Number(latitude), lng: Number(longitude) };
+
+        const geocoder = new google.maps.Geocoder;
+
+        geocoder.geocode({ 'location': latlng }, function(results, status) {
+
+          if (results && results.length){
+
+            const { formatted_address } = results[0];
+         
+            self.setState({query: formatted_address});
+
+          }
+        });
+
+      });
+    }
+    else {
+
+      console.log("position doesn't exists");
+    }
   }
 
   render() {
