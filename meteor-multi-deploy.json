@@ -3,9 +3,9 @@
     {
       "platformName":           "android",
       "environment":            "production",
-      "projectName":            "rmhc.keystore",
+      "projectName":            "rmhc",
       "server":                 "https://rmhc.herokuapp.com/",
-      "storepass":              "rmhc",
+      "storepass":              "poeticsystems",
       "keystoreFilePath":       ".keystore",
       "apkOutputPath":          "~/Downloads/rmhc.apk"
     },
