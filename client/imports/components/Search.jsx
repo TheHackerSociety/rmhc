@@ -2,15 +2,31 @@ import React from 'react';
 import { Link } from 'param-store';
 import PlaceItemSearch from './PlaceItemSearch';
 import GooglePlaces from 'react-google-places-component';
-
+import Geolocation from 'meteor/mdg:geolocation';
 export default class Search extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = { query: '' };
   }
 
   searchByGeolocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        const latlng = { lat: Number(latitude), lng: Number(longitude) };
+        const geocoder = new google.maps.Geocoder;
 
+        geocoder.geocode({ location: latlng }, (results) => {
+          if (results) {
+            const { formatted_address } = results[0];
+            this.props.setAddress(formatted_address);
+          }
+        });
+      }, () => {
+        alert('Current location is unavailable. Please enter an address or change your location settings.');
+      });
+    }
   }
 
   render() {
@@ -20,12 +36,13 @@ export default class Search extends React.Component {
           <nav>
             <Link href="index.html"
               className="nav-text cancel"
-              params={{ path: 'index' }} >
+              params={{ path: 'index' }}
+            >
               Cancel
             </Link>
           </nav>
           <input id="address-2"
-            onChange={(e) => this.setState({query: e.target.value})}
+            onChange={(e) => this.setState({ query: e.target.value })}
             type="text"
             placeholder="Address or zip"
             name="address-2"
@@ -36,7 +53,8 @@ export default class Search extends React.Component {
             onClick={() => this.searchByGeolocation()}
             alt="target icon"
             src="images/input-icon.svg"
-            className="address-icon"/>
+            className="address-icon"
+          />
           {
             this.state.query
               ? null
@@ -47,7 +65,8 @@ export default class Search extends React.Component {
               <GooglePlaces
                 options={{ input: this.state.query }}
                 itemProps={{ onClick: this.props.setAddress }}
-                itemComponent={PlaceItemSearch} />
+                itemComponent={PlaceItemSearch}
+              />
             </div>
           </div>
         </div>

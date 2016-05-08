@@ -18,8 +18,8 @@ export default class App extends React.Component {
   }
 
   setAddress(address) {
-    ParamStore.set({ path: 'events-by-location' });
     this.setState({ address });
+    ParamStore.set({ path: 'events-by-location' });
   }
 
   render() {
