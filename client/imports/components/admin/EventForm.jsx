@@ -21,35 +21,61 @@ export default class EventForm extends React.Component {
       noonStartTime: '1:00 pm',
       noonEndTime: '2:00 pm',
       haveMorning: true,
-      haveEvening: true
-    }
+      haveEvening: true,
+      selection:'',
+    };
   }
 
   submit(e) {
     e.preventDefault();
-    const event = _.clone(this.state)
+    const event = _.clone(this.state);
     event.address = {
       street: event.street,
-      zip: event.zip
-    }
+      zip: event.zip,
+    };
 
     if (!event.haveMorning) {
-      event.morningStartTime = ''
-      event.morningEndTime = ''
+      event.morningStartTime = '';
+      event.morningEndTime = '';
     }
 
     if (!event.haveEvening) {
-      event.noonStartTime = ''
-      event.noonEndTime = ''
+      event.noonStartTime = '';
+      event.noonEndTime = '';
     }
 
-    delete event.street
-    delete event.haveMorning
-    delete event.haveEvening
-    delete event.zip
+    delete event.street;
+    delete event.haveMorning;
+    delete event.haveEvening;
+    delete event.zip;
 
-    Events.insert(event)
+    Events.insert(event);
     this.setState(this.getMyInitialState());
+  }
+
+  getAddressDetails(e, prediction) {
+    e.preventDefault();
+    const service = new google.maps.places.PlacesService(document.createElement('div'));
+    service.getDetails({
+      placeId: prediction.place_id,
+    }, (response) => {
+      const streetExist = _.find(response.address_components, (component) => (
+        component.types[0] === 'street_number'
+      ));
+      const streetNumber = streetExist ? streetExist.short_name : '';
+      const streetRoute = _.find(response.address_components, (component) => (
+        component.types[0] === 'route'
+      )).short_name;
+      const zip = _.find(response.address_components, (component) => (
+        component.types[0] === 'postal_code'
+      )).long_name;
+      this.setState({
+        selection: prediction.description,
+        street: `${streetNumber} ${streetRoute}`,
+        zip: `Houston TX ${zip}`,
+        isOpen: false,
+      });
+    });
   }
 
   render() {
@@ -61,25 +87,30 @@ export default class EventForm extends React.Component {
               Location Name:
             </label>
             <input id="Location-2"
-              onChange={(e) => this.setState({place: e.target.value})}
+              onChange={(e) => this.setState({ place: e.target.value })}
               value={this.state.place}
               type="text"
               placeholder="Enter Location"
               name="Location-2"
               data-name="Location 2"
               required="required"
-              className="w-input text-field" />
+              className="w-input text-field"
+            />
           </div>
           <div className="input-container address">
             <label htmlFor="Address-2">
               Address:
             </label>
             <input id="Address-2"
-              onChange={(e) => this.setState({ isOpen: true, street: e.target.value })}
+              onChange={(e) => this.setState({
+                isOpen: true,
+                street: e.target.value,
+                selection: e.target.value,
+              })}
               type="text"
               placeholder="Enter Address"
               name="Address-2"
-              value={this.state.street}
+              value={this.state.selection}
               data-name="Address 2"
               required="required"
               className="w-input text-field"
@@ -90,22 +121,8 @@ export default class EventForm extends React.Component {
                   <div className="address-popout">
                     <GooglePlaces
                       options={{ input: this.state.street }}
-                      itemProps={{ onClick: (e, prediction) => {
-                        e.preventDefault();
-                        const service = new google.maps.places.PlacesService(document.createElement('div'));
-                        service.getDetails({
-                          placeId: prediction.place_id
-                        },  (response) => {
-                          const zip = _.find(response.address_components, (component) => {
-                            return component.types[0] === 'postal_code'
-                          }).long_name;
-                          this.setState({
-                            street: prediction.description,
-                            zip: 'Houston TX ' + zip,
-                            isOpen: false
-                          })
-                        })
-                      }}}
+                      itemProps={{ onClick: (e, prediction) =>
+                        this.getAddressDetails(e, prediction) }}
                       itemComponent={PlaceItemAdmin}
                     />
                   </div>
@@ -125,77 +142,78 @@ export default class EventForm extends React.Component {
               name="Date-2"
               data-name="Date 2"
               required="required"
-              className="w-input text-field" />
+              className="w-input text-field"
+            />
           </div>
-
-
           <div className="w-clearfix input-container date">
             <label htmlFor="field-27">
               Morning Session:
-              <input type='checkbox'
+              <input type="checkbox"
                 checked={this.state.haveMorning}
                 onChange={(e) => {
                   this.setState({
-                    haveMorning: e.target.checked
-                  })
+                    haveMorning: e.target.checked,
+                  });
                 }
                 }
-                  />
+              />
                 </label>
                 {
                   this.state.haveMorning ?
                     <div>
                       <MorningSelect
-                        onChange={(e) => this.setState({morningStartTime: e.target.value})}
+                        onChange={(e) => this.setState({ morningStartTime: e.target.value })}
                         value={this.state.morningStartTime}
                       />
                       <div className="middle-text">
                         to
                       </div>
                       <MorningSelect
-                        onChange={(e) => this.setState({morningEndTime: e.target.value})}
-                        value={this.state.morningEndTime} />
+                        onChange={(e) => this.setState({ morningEndTime: e.target.value })}
+                        value={this.state.morningEndTime}
+                      />
                     </div>
                     : null
                     }
                   </div>
-
                   <div className="w-clearfix input-container date">
                     <label htmlFor="field-29">
                       Afternoon Session:
-                      <input type='checkbox'
+                      <input type="checkbox"
                         checked={this.state.haveEvening}
                         onChange={(e) => {
                           this.setState({
-                            haveEvening: e.target.checked
-                          })
+                            haveEvening: e.target.checked,
+                          });
                         }
                         }
+                      />
+                    </label>
+                      {
+                        this.state.haveEvening ?
+                        <div>
+                          <AfternoonSelect
+                            onChange={(e) => this.setState({ noonStartTime: e.target.value })}
+                            value={this.state.noonStartTime}
                           />
-                        </label>
-
-                        {
-                          this.state.haveEvening ?
-                          <div>
-                            <AfternoonSelect
-                              onChange={(e) => this.setState({noonStartTime: e.target.value})}
-                              value={this.state.noonStartTime} />
-                            <div className="middle-text">
-                              to
-                            </div>
-                            <AfternoonSelect
-                              onChange={(e) => this.setState({noonEndTime: e.target.value})}
-                              value={this.state.noonEndTime} />
-                          </div>:
-                            null
-                          }
-                        </div>
+                          <div className="middle-text">
+                            to
+                          </div>
+                          <AfternoonSelect
+                            onChange={(e) => this.setState({ noonEndTime: e.target.value })}
+                            value={this.state.noonEndTime}
+                          />
+                        </div> :
+                          null
+                      }
+                  </div>
           <input type="submit"
             value="Submit"
             data-wait="Please wait..."
-            className="w-button submit btn primary-btn-color" />
+            className="w-button submit btn primary-btn-color"
+          />
         </div>
       </form>
-    )
+    );
   }
   }

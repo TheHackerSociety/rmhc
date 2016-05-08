@@ -20,7 +20,6 @@ class Admin extends React.Component {
           {
             this.props.events.map((event) => {
               return <EventDetailsItem key={event._id} event={event}/>
-
             })
           }
         </section>

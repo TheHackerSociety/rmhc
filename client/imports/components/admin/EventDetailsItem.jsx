@@ -1,11 +1,11 @@
 import React from 'react';
 
-function deleteEvent (e, event) {
-  e.preventDefault()
-  Events.remove(event._id)
+function deleteEvent(e, event) {
+  e.preventDefault();
+  Events.remove(event._id);
 }
 
-const EventDetailsItem = ({event}) => (
+const EventDetailsItem = ({ event }) => (
   <form id="email-form"
     name="email-form"
     data-name="Email Form"
@@ -27,14 +27,14 @@ const EventDetailsItem = ({event}) => (
       <label className="field-label" htmlFor="Date-4">
         Date:
       </label>
-      {event.date.toString()}
+      {event.date.toDateString()}
     </div>
     <div className="w-clearfix input-container date">
       <label className="field-label" htmlFor="field-21">
         Morning Session:
       </label>
       <div className="middle-text">
-        {event.morningStartTime} to {event.morningEndTime}
+        {event.morningStartTime} {event.morningStartTime ? 'to' : ''} {event.morningEndTime}
       </div>
     </div>
     <div className="w-clearfix input-container date">
@@ -42,7 +42,7 @@ const EventDetailsItem = ({event}) => (
         Afternoon Session:
       </label>
       <div className="middle-text">
-        {event.noonStartTime} to {event.noonEndTime}
+        {event.noonStartTime} {event.noonStartTime ? 'to' : ''} {event.noonEndTime}
       </div>
     </div>
     <input type="submit"
@@ -54,3 +54,6 @@ const EventDetailsItem = ({event}) => (
   </form>
   );
 export default EventDetailsItem;
+EventDetailsItem.propTypes = {
+  event: React.PropTypes.object,
+};

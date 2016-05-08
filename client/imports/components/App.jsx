@@ -1,5 +1,4 @@
 import React from 'react';
-import AdminContainer from './admin/AdminContainer';
 import EventsByDateContainer from './EventsByDateContainer';
 import EventsByLocationContainer from './EventsByLocationContainer';
 import IndexContainer from './IndexContainer';

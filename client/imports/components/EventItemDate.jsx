@@ -52,9 +52,9 @@ export default class EventItemDate extends React.Component {
             {event.address.zip}
           </div>
           <div className="secondary-font-color location-time">
-            {event.morningStartTime}-{event.morningEndTime}
-            <br />
-            {event.noonStartTime}-{event.noonEndTime}
+            {event.morningStartTime} {event.morningStartTime ? '-' : null } {event.morningEndTime}
+            {event.morningStartTime ? <br /> : null}
+            {event.noonStartTime} {event.noonStartTime ? '-' : null } {event.noonEndTime}
           </div>
         </div>
       </div>
