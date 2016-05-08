@@ -7,12 +7,15 @@ import { createContainer } from 'meteor/react-meteor-data';
 
 class LoginContainer extends React.Component {
   render() {
-    const { loggedIn } = this.props;
+    const { loggedIn, loggingIn } = this.props;
     const { path } = this.props.currentParams;
     if (path !== 'admin') {
       return null;
     }
 
+    if (loggingIn) {
+      return null;
+    }
 
     if (loggedIn) {
       return <Admin />;
@@ -23,12 +26,16 @@ class LoginContainer extends React.Component {
 }
 
 const dataContainer = createContainer(() => (
-  { loggedIn: Boolean(Meteor.user()) }
+  {
+    loggedIn: Boolean(Meteor.user()),
+    loggingIn: Boolean(Meteor.loggingIn()),
+  }
 ), LoginContainer);
 
 export default connect(dataContainer, 'path');
 
 LoginContainer.propTypes = {
   loggedIn: React.PropTypes.bool,
+  loggingIn: React.PropTypes.bool,
   currentParams: React.PropTypes.object,
 };
