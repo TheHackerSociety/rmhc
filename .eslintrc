@@ -47,6 +47,7 @@
     // globals useful when creating Meteor packages
     "Npm": false,
     "Tinytest": false,
+    "navigator": false,
 
     // common Meteor packages
     "Random": false,
