@@ -11,7 +11,7 @@
   "dependencies": {
     "lodash": "^4.10.0",
     "meteor-node-stubs": "~0.2.0",
-    "param-store": "poetic/param-store#48154dffbeeb2055c7259aa9c5a34f50f3a50411",
+    "param-store": "0.4.8",
     "react": "^15.0.1",
     "react-addons-pure-render-mixin": "^15.0.1",
     "react-dom": "^15.0.1",
