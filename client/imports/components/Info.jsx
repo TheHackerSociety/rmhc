@@ -12,9 +12,8 @@ const Info = ({}) => (
           <section className="details-section">
             <p className="service-paragraph">
               Ronald McDonald Care Mobile
-              <span className="bold-text">
-                FREE
-              </span>
+              <br/>
+              <span className="bold-text">FREE </span>
               capabilities and pediatric primary care services provided will
               vary by each community’s needs and may include:
             </p>

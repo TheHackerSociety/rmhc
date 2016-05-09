@@ -12,20 +12,20 @@ export default class EventsByLocation extends React.Component {
     super(props);
     this.state = {
       loading: true,
-      eventsGroupedByDistance: {}
+      eventsGroupedByDistance: {},
     };
   }
 
   componentWillMount() {
     if (this.props.events.length > 0) {
       this.getEventsGroupedByDistance((eventsGroupedByDistance) => {
-        this.setState({eventsGroupedByDistance, loading: false});
+        this.setState({ eventsGroupedByDistance, loading: false });
       });
     }
   }
 
   getEventsGroupedByDistance(callback) {
-    const {events, origin} = this.props;
+    const { events, origin } = this.props;
 
     const destinations = events.map((event) => (
       `${event.address.street} ${event.address.zip}`
@@ -118,6 +118,7 @@ export default createContainer((address) => {
 EventsByLocation.propTypes = {
   events: React.PropTypes.array,
   address: React.PropTypes.object,
+  origin: React.PropTypes.string,
 };
 
 function Loading () {
