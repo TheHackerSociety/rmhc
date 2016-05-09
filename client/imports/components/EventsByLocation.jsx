@@ -3,6 +3,7 @@ import { Link } from 'param-store';
 import EventItemLocation from './EventItemLocation';
 import EventItemLoading from './EventItemLoading.jsx';
 import { createContainer } from 'meteor/react-meteor-data';
+import LocationError from  './error/LocationError';
 import _ from 'lodash';
 
 const METERS_PER_MILE = 1609.34;
@@ -17,6 +18,10 @@ export default class EventsByLocation extends React.Component {
   }
 
   componentWillMount() {
+   if (this.props.events.length === 0) {
+      this.setState({ loading: false })
+    }
+
     if (this.props.events.length > 0) {
       this.getEventsGroupedByDistance((eventsGroupedByDistance) => {
         this.setState({ eventsGroupedByDistance, loading: false });
@@ -48,11 +53,10 @@ export default class EventsByLocation extends React.Component {
             return 'Within 10 Miles';
           } else if (distance <= 20 * METERS_PER_MILE) {
             return 'Within 20 Miles';
-          } else {
+          } else if (distance <= 100 * METERS_PER_MILE) {
             return 'Further than 20 Miles';
-          }
-        })
-
+          } else return 'Further than 100 Miles';
+        });
         callback(eventsGroupedByDistance);
       }
     });
@@ -71,6 +75,9 @@ export default class EventsByLocation extends React.Component {
   render() {
     if (this.state.loading) {
       return <Loading />;
+    }
+    if (this.props.events.length === 0 || (Object.keys(this.state.eventsGroupedByDistance).length === 1 && this.state.eventsGroupedByDistance['Further than 100 Miles'])) {
+      return <LocationError />;
     }
 
     const groupedEvents = _.map(

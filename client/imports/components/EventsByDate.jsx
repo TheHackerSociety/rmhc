@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'param-store';
 import EventItemDate from './EventItemDate';
+import LocationError from './error/LocationError'
 import { createContainer } from 'meteor/react-meteor-data';
 import _ from 'lodash';
 
@@ -10,6 +11,9 @@ export default class EventsByDate extends React.Component {
     const { events } = this.props;
     const eventsSortByDate = _.sortBy(events, 'date');
 
+    if (events.length === 0) {
+        return <LocationError />
+      }
     return (
       <div className="body-color">
         <div className="container">

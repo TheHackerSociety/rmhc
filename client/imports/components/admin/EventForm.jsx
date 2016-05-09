@@ -59,6 +59,7 @@ export default class EventForm extends React.Component {
     service.getDetails({
       placeId: prediction.place_id,
     }, (response) => {
+      console.log(response)
       const streetExist = _.find(response.address_components, (component) => (
         component.types[0] === 'street_number'
       ));
@@ -69,6 +70,7 @@ export default class EventForm extends React.Component {
       const zip = _.find(response.address_components, (component) => (
         component.types[0] === 'postal_code'
       )).long_name;
+
       this.setState({
         selection: prediction.description,
         street: `${streetNumber} ${streetRoute}`,

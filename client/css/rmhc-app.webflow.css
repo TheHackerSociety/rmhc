@@ -427,7 +427,10 @@ li {
 }
 
 .phone-img {
+  display: block;
   margin-top: 44px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .location-error-message {
