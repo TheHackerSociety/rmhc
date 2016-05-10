@@ -4,7 +4,7 @@
       "platformName":           "android",
       "environment":            "production",
       "projectName":            "rmhc",
-      "server":                 "https://rmhc.herokuapp.com/",
+      "server":                 "rmhc.herokuapp.com/",
       "storepass":              "poeticsystems",
       "keystoreFilePath":       ".keystore",
       "apkOutputPath":          "~/Downloads/rmhc.apk"
@@ -13,7 +13,7 @@
       "platformName":           "ios",
       "environment":            "production",
       "projectName":            "rmhc",
-      "server":                 "https://rmhc.herokuapp.com/"
+      "server":                 "rmhc.herokuapp.com/"
     }
   ]
 }
