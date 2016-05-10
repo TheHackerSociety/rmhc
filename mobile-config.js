@@ -24,7 +24,6 @@ App.launchScreens({
   'iphone5': 'resources/splash/iphone_portrait_5_@2x.png',
   'iphone6': 'resources/splash/iphone_portrait_6_@2x.png',
   'iphone6p_portrait': 'resources/splash/iphone_portrait_6p_@3x.png',
-  'iphone6p_landscape': 'resources/splash/splash-736x414@3x.png',
 
   'ipad_portrait': 'resources/splash/ipad_portrait_7-8_@1x.png',
   'ipad_portrait_2x': 'resources/splash/ipad_portrait_7-8_@2x.png',
