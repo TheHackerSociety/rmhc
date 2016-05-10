@@ -59,10 +59,13 @@ export default class EventForm extends React.Component {
     service.getDetails({
       placeId: prediction.place_id,
     }, (response) => {
-      console.log(response)
       const streetExist = _.find(response.address_components, (component) => (
         component.types[0] === 'street_number'
       ));
+      if (!streetExist) {
+        alert('Please provide a street address');
+        return false;
+      }
       const streetNumber = streetExist ? streetExist.short_name : '';
       const streetRoute = _.find(response.address_components, (component) => (
         component.types[0] === 'route'
@@ -70,11 +73,17 @@ export default class EventForm extends React.Component {
       const zip = _.find(response.address_components, (component) => (
         component.types[0] === 'postal_code'
       )).long_name;
+      const city = _.find(response.address_components, (component) => (
+         component.types[0] === 'locality'
+      )).short_name;
+      const state = _.find(response.address_components, (component) => (
+         component.types[0] === 'administrative_area_level_1'
+      )).short_name;
 
       this.setState({
         selection: prediction.description,
         street: `${streetNumber} ${streetRoute}`,
-        zip: `Houston TX ${zip}`,
+        zip: `${city} ${state} ${zip}`,
         isOpen: false,
       });
     });
@@ -122,7 +131,7 @@ export default class EventForm extends React.Component {
                 ? (
                   <div className="address-popout">
                     <GooglePlaces
-                      options={{ input: this.state.street }}
+                      options={{ input: this.state.street, types: ['address'] }}
                       itemProps={{ onClick: (e, prediction) =>
                         this.getAddressDetails(e, prediction) }}
                       itemComponent={PlaceItemAdmin}

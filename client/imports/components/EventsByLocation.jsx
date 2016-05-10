@@ -53,9 +53,9 @@ export default class EventsByLocation extends React.Component {
             return 'Within 10 Miles';
           } else if (distance <= 20 * METERS_PER_MILE) {
             return 'Within 20 Miles';
-          } else if (distance <= 100 * METERS_PER_MILE) {
-            return 'Further than 20 Miles';
-          } else return 'Further than 100 Miles';
+          } else {
+            return 'Further than further than 20 Miles';
+          }
         });
         callback(eventsGroupedByDistance);
       }
@@ -76,7 +76,7 @@ export default class EventsByLocation extends React.Component {
     if (this.state.loading) {
       return <Loading />;
     }
-    if (this.props.events.length === 0 || (Object.keys(this.state.eventsGroupedByDistance).length === 1 && this.state.eventsGroupedByDistance['Further than 100 Miles'])) {
+    if (this.props.events.length === 0) {
       return <LocationError />;
     }
 

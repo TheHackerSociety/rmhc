@@ -16,7 +16,7 @@ export default class PlaceItemSearch extends React.Component {
     const { prediction } = this.props;
     if (prediction) {
       return (
-        <a href="#" className="w-inline-block address-option"
+        <a href="" className="w-inline-block address-option"
           onClick={this.setAddress}
         >
           {prediction.description}
