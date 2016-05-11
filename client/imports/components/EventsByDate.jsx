@@ -16,7 +16,7 @@ export default class EventsByDate extends React.Component {
       }
     return (
       <div className="body-color">
-        <div className="container">
+        <div className="container" style={{ 'overflowY': 'auto' }}>
           <nav className="nav events-nav">
             <img alt="back arrow" src="images/triangle-icon.svg" className="back-arrow" />
             <Link href="search.html" className="nav-text" params={{ path: 'index' }}> Back

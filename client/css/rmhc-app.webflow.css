@@ -53,10 +53,8 @@ li {
   -ms-flex-direction: column;
   flex-direction: column;
   background-color: #fff;
-  overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
-
 .body-color {
   background-color: #000;
 }
@@ -587,4 +585,3 @@ li {
     text-decoration: none;
   }
 }
-

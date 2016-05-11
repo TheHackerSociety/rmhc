@@ -3,7 +3,7 @@ import { Link } from 'param-store';
 
 const Info = ({}) => (
       <div className="body-color">
-        <div className="container">
+        <div className="container" style={{ 'overflowY': 'auto' }}>
           <nav className="nav-padding">
             <img alt="triangle" src="images/triangle-icon.svg" className="back-arrow" />
             <Link href="index.html" className="nav-text" params={{ path: 'index' }}> Back
