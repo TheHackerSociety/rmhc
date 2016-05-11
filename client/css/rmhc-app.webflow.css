@@ -75,6 +75,7 @@ li {
   margin-top: 9px;
   margin-right: 10px;
   margin-bottom: 11px;
+  padding: 10px;
   float: right;
 }
 
@@ -107,16 +108,20 @@ li {
 
 .nav-text {
   display: inline-block;
-  margin-top: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   font-family: 'Open Sans', sans-serif;
   color: #628ecc;
-  font-size: 20px;
+  font-size: 16px;
   text-decoration: none;
 }
 
 .nav-text.cancel {
-  margin-bottom: 10px;
+  margin-top: 0px;
   margin-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 16px;
 }
 
 .address-input {
@@ -124,14 +129,14 @@ li {
 }
 
 .input {
-  min-height: 50px;
+  min-height: 55px;
   margin-bottom: 0px;
   border-radius: 0px;
 }
 
 .address-icon {
-  margin-top: -38px;
-  margin-right: 12px;
+  margin-top: -51px;
+  padding: 10px;
   float: right;
 }
 
