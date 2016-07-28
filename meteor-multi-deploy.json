@@ -14,6 +14,11 @@
       "environment":            "production",
       "projectName":            "rmhc",
       "server":                 "rmhc.herokuapp.com/"
+    },
+    {
+      "platformName": "heroku",
+      "environment": "production",
+      "projectName": "rmhc"
     }
   ]
 }
