@@ -12,16 +12,16 @@ const Index = ({}) => (
               <img alt="information icon" src="images/information-icon.svg" />
             </Link>
           </nav>
-          <img alt="Ronald McDonald House Charities logo"
-            width="178"
-            src="images/rmhc-logo.svg"
-            className="center"
-          />
-          <img alt="Ronald McDonald Care Mobile "
-            width="280"
-            src="images/care-mobile-logo.png"
-            className="center care-mobile-logo"
-          />
+            <img alt="Ronald McDonald House Charities logo"
+              width="178"
+              src="images/rmhc-logo.svg"
+              className="center"
+            />
+            <img alt="Ronald McDonald Care Mobile "
+              width="280"
+              src="images/care-mobile-logo.png"
+              className="center care-mobile-logo"
+            />
           <div className="w-clearfix btn-wrapper">
             <Link href="search.html"
               className="w-inline-block btn-container primary-btn-color"
