@@ -14,7 +14,7 @@ const Index = ({}) => (
           </nav>
           <img alt="Ronald McDonald House Charities logo"
             width="178"
-            src="images/rmhc-logo.png"
+            src="images/rmhc-logo.svg"
             className="center"
           />
           <img alt="Ronald McDonald Care Mobile "
