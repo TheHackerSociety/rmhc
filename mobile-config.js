@@ -1,6 +1,6 @@
 App.info({
   id: 'com.poeticsystems.rmhc',
-  version: '1.0.0',
+  version: '1.0.1',
   name: 'RMHC',
   description: 'Ronald McDonald House Charities',
   author: 'PoeticSystems'
