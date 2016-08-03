@@ -1,24 +1,24 @@
 {
-  "platforms": [
-    {
-      "platformName":           "android",
-      "environment":            "production",
-      "projectName":            "rmhc",
-      "server":                 "rmhc.herokuapp.com/",
-      "storepass":              "poeticsystems",
-      "keystoreFilePath":       ".keystore",
-      "apkOutputPath":          "~/Downloads/rmhc.apk"
+  "default": {
+    "default": {
+      "name": "rmhc"
     },
-    {
-      "platformName":           "ios",
-      "environment":            "production",
-      "projectName":            "rmhc",
-      "server":                 "rmhc.herokuapp.com/"
+    "production": {
+      "server": "rmhc.herokuapp.com"
     },
-    {
-      "platformName": "heroku",
-      "environment": "production",
-      "projectName": "rmhc"
+    "staging": {
+      "server": "rmhc-staging.herokuapp.com"
     }
-  ]
+  },
+  "android": {
+    "default": {
+      "storepass": "poeticsystems",
+      "keystorePath": ".keystore",
+      "apkOutputPath": "~/Downloads/rmhc.apk"
+    }
+  },
+  "ios": {
+  },
+  "heroku": {
+  }
 }
