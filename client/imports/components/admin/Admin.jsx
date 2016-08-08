@@ -11,11 +11,9 @@ class Admin extends React.Component {
           <img alt="Ronald McDonald House Charities logo"
             width="178"
             src="images/rmhc-logo.png"
-            className="center" />
-          <img alt="Ronald McDonald Care Mobile "
-            width="280"
-            src="images/care-mobile-logo.png"
-            className="center care-mobile-logo" />
+            className="center"
+            style={{ marginBottom: '48px' }}
+          />
           <EventForm />
           {
             this.props.events.map((event) => {
