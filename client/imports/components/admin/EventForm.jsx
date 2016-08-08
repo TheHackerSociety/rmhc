@@ -31,8 +31,8 @@ export default class EventForm extends React.Component {
 
     const event = _.clone(this.state);
 
-    const dateArray = event.date.split('-');
-    event.date = new Date(dateArray[0], dateArray[1], dateArray[2]);
+    const dateComponents = event.date.split('-');
+    event.date = new Date(dateComponents[0], dateComponents[1], dateComponents[2]);
 
     event.address = {
       street: event.street,
