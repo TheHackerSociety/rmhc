@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'param-store';
+import OperatedByInfomation from './OperatedByInformation';
 
 const imageStyle = {
   backgroundImage: 'url(/images/rmhc-logo.png)',
@@ -23,6 +24,7 @@ const Index = () => (
         </Link>
       </nav>
       <div style={imageStyle} />
+      <OperatedByInfomation />
       <div className="w-clearfix btn-wrapper" style={{ position: 'relative' }}>
         <Link
           href="search.html"
