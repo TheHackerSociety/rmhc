@@ -6,7 +6,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 import _ from 'lodash';
 
 
-export default class EventsByDate extends React.Component {
+class EventsByDate extends React.Component {
   render() {
     const { events } = this.props;
     const eventsSortByDate = _.sortBy(events, 'date');

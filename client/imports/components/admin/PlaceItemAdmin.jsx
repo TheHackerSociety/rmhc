@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class PlaceItemAdmin extends React.Component {
+class PlaceItemAdmin extends React.Component {
   constructor(props) {
     super(props);
   }

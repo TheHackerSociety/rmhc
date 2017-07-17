@@ -8,7 +8,7 @@ import _ from 'lodash';
 
 const METERS_PER_MILE = 1609.34;
 
-export default class EventsByLocation extends React.Component {
+class EventsByLocation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
